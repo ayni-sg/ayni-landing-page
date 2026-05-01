@@ -1,9 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-SG">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ayni — Today for you, tomorrow for me</title>
+  <title>Ayni | Gamified Neighborhood Trust Platform</title>
+  <meta name="description" content="Ayni is a gamified neighborhood trust platform that helps communities discover nearby skills, share assets, complete verified quests, and build social capital. Today for you, tomorrow for me." />
+  <meta name="keywords" content="Ayni, neighborhood app, community app, social trust platform, reciprocity, asset sharing, skill swapping, gamified community, local quests, Singapore community app, social capital" />
+  <meta name="author" content="Ayni" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://www.ayni.app/" />
+
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.ayni.app/" />
+  <meta property="og:title" content="Ayni | Today for you, tomorrow for me" />
+  <meta property="og:description" content="Ayni turns neighborhood trust into a beautiful, measurable, and rewarding ecosystem through discovery, skill swaps, asset sharing, verified quests, and evolving digital spirits." />
+  <meta property="og:image" content="https://www.ayni.app/assets/ayni-social-preview.png" />
+  <meta property="og:image:alt" content="Ayni logo and app preview" />
+  <meta property="og:site_name" content="Ayni" />
+  <meta property="og:locale" content="en_SG" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://www.ayni.app/" />
+  <meta name="twitter:title" content="Ayni | Today for you, tomorrow for me" />
+  <meta name="twitter:description" content="Ayni is a gamified social infrastructure platform for high-trust neighborhood exchange." />
+  <meta name="twitter:image" content="https://www.ayni.app/assets/ayni-social-preview.png" />
+
+  <!-- Favicons / App Icons -->
+  <link rel="icon" type="image/png" href="assets/favicon-32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="assets/favicon-16.png" sizes="16x16" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+  <meta name="theme-color" content="#073f42" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Ayni",
+    "url": "https://www.ayni.app/",
+    "logo": "https://www.ayni.app/assets/ayni-logo-nav.png",
+    "sameAs": [],
+    "description": "Ayni is a gamified neighborhood trust platform that converts local social capital into a rewarding community ecosystem."
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Ayni",
+    "url": "https://www.ayni.app/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.ayni.app/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
   <style>
     :root {
       --teal: #073f42;
@@ -1057,7 +1113,21 @@
       }
 
       .phone {
+        width: min(330px, 92vw);
         height: 620px;
+        transform: none;
+        border-radius: 42px;
+        padding: 14px;
+      }
+
+      .phone-screen {
+        border-radius: 30px;
+        padding: 22px;
+      }
+
+      .phone-stage {
+        min-height: 660px;
+        overflow: visible;
       }
 
       .floating-card,
@@ -1066,7 +1136,7 @@
       }
 
       .phone-stage {
-        min-height: 640px;
+        min-height: 660px;
       }
 
       .pillars,
@@ -1091,7 +1161,7 @@
   <header class="page-shell nav">
   <a class="brand" href="#top">
     <!-- Replace with nav logo -->
-    <img src="assets/ayni-logo-nav.png" style="height:36px;" />
+    <img src="assets/ayni-logo-nav.png" alt="Ayni logo" style="height:36px;" />
   </a>
   <nav class="nav-links">
     <a href="#pillars">Pillars</a>
@@ -1172,7 +1242,7 @@
       <div class="living-handshake reveal">
         <div class="hero-logo-art">
   <!-- Replace with your main hero logo -->
-  <img src="assets/ayni-hero-logo.png" alt="Ayni Logo" style="width:80%; max-width:420px;" />
+  <img src="assets/ayni-hero-logo.png" alt="Ayni living handshake logo representing reciprocity, trust, and community growth" style="width:80%; max-width:420px;" />
 </div>
           </div>
         </div>
@@ -1185,7 +1255,7 @@
           </div>
           <div class="app-icon-preview">
   <!-- Replace with app icon -->
-  <img src="assets/ayni-app-icon.png" alt="Ayni App Icon" style="width:120px;" />
+  <img src="assets/ayni-app-icon.png" alt="Ayni mobile app icon with amber and teal reciprocity loops" style="width:120px;" />
 </div>
           </div>
         </div>
@@ -1333,7 +1403,7 @@
   <footer class="page-shell footer">
   <div class="brand">
     <!-- Replace with small logo -->
-    <img src="assets/ayni-logo-small.png" style="height:32px;" />
+    <img src="assets/ayni-logo-small.png" alt="Ayni small logo" style="height:32px;" />
   </div>
   <p>Today for you, tomorrow for me.</p>
 </footer>
