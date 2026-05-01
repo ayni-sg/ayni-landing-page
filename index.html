@@ -81,25 +81,55 @@
       color: var(--teal);
     }
 
-    .logo-mark {
-      width: 42px;
+    .ayni-logo-mini {
+      width: 54px;
       height: 42px;
-      border-radius: 15px;
       position: relative;
-      background: linear-gradient(135deg, var(--teal), var(--amber));
-      box-shadow: inset 0 2px 10px rgba(255,255,255,0.45), 0 10px 22px rgba(7,63,66,0.25);
+      display: inline-block;
+      filter: drop-shadow(0 10px 18px rgba(7,63,66,0.22));
     }
 
-    .logo-mark::before {
-      content: "A";
+    .ayni-logo-mini .loop {
       position: absolute;
-      inset: 0;
+      top: 7px;
+      width: 32px;
+      height: 26px;
+      border: 8px solid;
+      border-radius: 999px;
+      background: transparent;
+    }
+
+    .ayni-logo-mini .loop-left {
+      left: 0;
+      border-color: #ff9418;
+      border-right-color: transparent;
+      transform: rotate(-22deg);
+      box-shadow: inset 0 2px 8px rgba(255,255,255,0.55), 0 4px 10px rgba(255,148,24,0.25);
+    }
+
+    .ayni-logo-mini .loop-right {
+      right: 0;
+      border-color: #0d6370;
+      border-left-color: transparent;
+      transform: rotate(22deg);
+      box-shadow: inset 0 2px 8px rgba(255,255,255,0.5), 0 4px 10px rgba(13,99,112,0.25);
+    }
+
+    .ayni-logo-mini .seed {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 21px;
+      height: 21px;
+      transform: translate(-50%, -38%);
+      border-radius: 50%;
       display: grid;
       place-items: center;
       color: white;
-      font-weight: 950;
-      font-size: 1.35rem;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      background: radial-gradient(circle, #fff7c6 0 16%, #ffc94d 28%, #ff9418 65%, #0d6370 100%);
+      font-size: 10px;
+      box-shadow: 0 0 24px rgba(255,201,77,0.9), 0 0 40px rgba(255,148,24,0.45);
+      z-index: 2;
     }
 
     .nav-links {
@@ -144,6 +174,185 @@
       background: var(--white);
       color: var(--teal);
       border: 1px solid rgba(7, 63, 66, 0.12);
+    }
+
+    .living-handshake {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 24px;
+      align-items: stretch;
+      padding: 34px;
+      border-radius: 44px;
+      background: rgba(255,255,255,0.66);
+      border: 1px solid rgba(255,255,255,0.95);
+      box-shadow: var(--shadow);
+      margin-top: 28px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-logo-art {
+      min-height: 300px;
+      border-radius: 34px;
+      background: linear-gradient(145deg, #fff8ec, #f1e4d3);
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-logo-art::before {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,201,77,0.28), transparent 65%);
+    }
+
+    .living-logo {
+      position: relative;
+      width: min(430px, 88%);
+      height: 250px;
+      filter: drop-shadow(0 24px 28px rgba(7,63,66,0.18));
+      z-index: 2;
+    }
+
+    .living-loop {
+      position: absolute;
+      top: 28px;
+      width: 210px;
+      height: 142px;
+      border: 42px solid;
+      border-radius: 999px;
+      background: transparent;
+    }
+
+    .living-left {
+      left: 4px;
+      border-color: #ff9418;
+      border-right-color: transparent;
+      transform: rotate(-20deg);
+      box-shadow: inset 0 8px 18px rgba(255,255,255,0.55), 0 16px 22px rgba(255,148,24,0.22);
+    }
+
+    .living-right {
+      right: 4px;
+      border-color: #0d6370;
+      border-left-color: transparent;
+      transform: rotate(20deg);
+      box-shadow: inset 0 8px 18px rgba(255,255,255,0.48), 0 16px 22px rgba(13,99,112,0.22);
+    }
+
+    .living-glow {
+      position: absolute;
+      left: 50%;
+      top: 80px;
+      transform: translateX(-50%);
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      background: radial-gradient(circle, #fffde3 0 18%, #ffd466 34%, #ff9418 68%, #0d6370 100%);
+      box-shadow: 0 0 28px rgba(255,215,92,1), 0 0 70px rgba(255,148,24,0.6);
+      z-index: 4;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-size: 18px;
+    }
+
+    .living-wordmark {
+      position: absolute;
+      bottom: 14px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: clamp(3rem, 6vw, 5.4rem);
+      line-height: 1;
+      letter-spacing: -0.08em;
+      color: #073f42;
+      font-weight: 950;
+    }
+
+    .living-wordmark .dot {
+      color: #ff9418;
+    }
+
+    .brand-board {
+      border-radius: 34px;
+      background: linear-gradient(145deg, #07181d, #0b2428);
+      color: white;
+      padding: 30px;
+      display: grid;
+      align-content: center;
+      gap: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brand-board::after {
+      content: "";
+      position: absolute;
+      right: -70px;
+      top: -50px;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,148,24,0.42), transparent 68%);
+    }
+
+    .brand-board h3 {
+      color: #ffcf7a;
+      letter-spacing: 0.18em;
+      font-size: 0.92rem;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 2;
+    }
+
+    .symbol-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .symbol-tile {
+      padding: 16px 12px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+    }
+
+    .symbol-tile strong {
+      display: block;
+      margin-top: 10px;
+      margin-bottom: 4px;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+    }
+
+    .symbol-tile span {
+      color: rgba(255,255,255,0.58);
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .app-icon-preview {
+      height: 170px;
+      border-radius: 30px;
+      background: linear-gradient(145deg, #0d6370, #09262b);
+      display: grid;
+      place-items: center;
+      box-shadow: inset 0 3px 18px rgba(255,255,255,0.15), 0 22px 44px rgba(0,0,0,0.22);
+      position: relative;
+      z-index: 2;
+    }
+
+    .app-icon-preview .ayni-logo-mini {
+      transform: scale(2.2);
     }
 
     .hero {
@@ -781,6 +990,10 @@
     }
 
     @media (max-width: 980px) {
+      .living-handshake {
+        grid-template-columns: 1fr;
+      }
+
       .nav-links {
         display: none;
       }
@@ -815,6 +1028,26 @@
     }
 
     @media (max-width: 620px) {
+      .living-handshake {
+        padding: 16px;
+        border-radius: 30px;
+      }
+
+      .hero-logo-art,
+      .brand-board {
+        border-radius: 24px;
+      }
+
+      .living-loop {
+        width: 154px;
+        height: 104px;
+        border-width: 30px;
+      }
+
+      .living-logo {
+        height: 210px;
+      }
+
       .page-shell {
         width: min(100% - 24px, 1180px);
       }
@@ -856,19 +1089,19 @@
 </head>
 <body>
   <header class="page-shell nav">
-    <a class="brand" href="#top" aria-label="Ayni home">
-      <span class="logo-mark" aria-hidden="true"></span>
-      Ayni
-    </a>
-    <nav class="nav-links" aria-label="Primary navigation">
-      <a href="#pillars">Pillars</a>
-      <a href="#actions">Actions</a>
-      <a href="#spirits">Spirit Dex</a>
-      <a href="#moat">Moat</a>
-      <a href="#business">Business</a>
-    </nav>
-    <a class="btn btn-primary" href="#join">Join Waitlist</a>
-  </header>
+  <a class="brand" href="#top">
+    <!-- Replace with nav logo -->
+    <img src="assets/ayni-logo-nav.png" style="height:36px;" />
+  </a>
+  <nav class="nav-links">
+    <a href="#pillars">Pillars</a>
+    <a href="#actions">Actions</a>
+    <a href="#spirits">Spirit Dex</a>
+    <a href="#moat">Moat</a>
+    <a href="#business">Business</a>
+  </nav>
+  <a class="btn btn-primary" href="#join">Join Waitlist</a>
+</header>
 
   <main id="top">
     <section class="page-shell hero">
@@ -883,9 +1116,9 @@
           <a class="btn btn-secondary" href="#pillars">See how it works</a>
         </div>
         <div class="trust-row" aria-label="Ayni trust highlights">
-          <span class="trust-pill">BLE offline-first</span>
-          <span class="trust-pill">AI-verified quests</span>
-          <span class="trust-pill">High-trust identity ready</span>
+          <span class="trust-pill">Living handshake logo</span>
+          <span class="trust-pill">Seed + pulse system</span>
+          <span class="trust-pill">Premium app icon ready</span>
         </div>
       </div>
 
@@ -904,6 +1137,8 @@
         </div>
         <div class="phone">
           <div class="phone-screen">
+  <!-- Optional: Replace with full app screenshot -->
+  <!-- <img src="assets/ayni-app-screenshot.png" style="width:100%; height:100%; object-fit:cover;" /> -->
             <div class="screen-top">
               <div class="radar-title"><span>Nearby now</span><strong>Ayni Radar</strong></div>
               <div class="balance-chip">842 pts</div>
@@ -928,6 +1163,30 @@
               <div><strong>Wisdom Table</strong><span>Dinner with verified seniors</span></div>
               <strong>+120</strong>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-shell">
+      <div class="living-handshake reveal">
+        <div class="hero-logo-art">
+  <!-- Replace with your main hero logo -->
+  <img src="assets/ayni-hero-logo.png" alt="Ayni Logo" style="width:80%; max-width:420px;" />
+</div>
+          </div>
+        </div>
+        <div class="brand-board">
+          <h3>The Living Handshake</h3>
+          <div class="symbol-row">
+            <div class="symbol-tile"><div class="ayni-logo-mini"><span class="loop loop-left"></span><span class="loop loop-right"></span><span class="seed">✦</span></div><strong>Reciprocity</strong><span>infinite cycle</span></div>
+            <div class="symbol-tile"><div style="font-size:2.25rem">🌱</div><strong>Seed</strong><span>growth & trust</span></div>
+            <div class="symbol-tile"><div style="font-size:2.25rem">☀️</div><strong>Pulse</strong><span>verified trust</span></div>
+          </div>
+          <div class="app-icon-preview">
+  <!-- Replace with app icon -->
+  <img src="assets/ayni-app-icon.png" alt="Ayni App Icon" style="width:120px;" />
+</div>
           </div>
         </div>
       </div>
@@ -1072,9 +1331,12 @@
   </main>
 
   <footer class="page-shell footer">
-    <div class="brand"><span class="logo-mark" aria-hidden="true"></span>Ayni</div>
-    <p>Today for you, tomorrow for me.</p>
-  </footer>
+  <div class="brand">
+    <!-- Replace with small logo -->
+    <img src="assets/ayni-logo-small.png" style="height:32px;" />
+  </div>
+  <p>Today for you, tomorrow for me.</p>
+</footer>
 
   <script>
     const revealObserver = new IntersectionObserver((entries) => {
