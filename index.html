@@ -236,12 +236,14 @@
 
     .hero {
       min-height: calc(100vh - 92px);
-      display: grid;
-      grid-template-columns: 1.02fr 0.98fr;
+      display: flex;
       align-items: center;
-      gap: 52px;
       padding: 88px 0 70px;
       position: relative;
+    }
+
+    .hero-content {
+      width: min(100%, 1060px);
     }
 
     .eyebrow {
@@ -273,10 +275,11 @@
     }
 
     h1 {
-      font-size: clamp(3.25rem, 7vw, 6.9rem);
-      line-height: 0.88;
-      letter-spacing: -0.085em;
-      margin-bottom: 24px;
+      font-size: clamp(4rem, 9.4vw, 9.4rem);
+      line-height: 0.86;
+      letter-spacing: -0.09em;
+      margin-bottom: 28px;
+      max-width: 1060px;
     }
 
     .gradient-text {
@@ -288,10 +291,10 @@
 
     .hero-copy {
       color: var(--ink-2);
-      font-size: clamp(1.08rem, 1.5vw, 1.28rem);
+      font-size: clamp(1.16rem, 1.65vw, 1.45rem);
       line-height: 1.72;
-      max-width: 650px;
-      margin-bottom: 30px;
+      max-width: 880px;
+      margin-bottom: 32px;
       font-weight: 560;
     }
 
@@ -932,7 +935,6 @@
         display: none;
       }
 
-      .hero,
       .worlds,
       .bridge,
       .cta-band {
@@ -967,7 +969,7 @@
       }
 
       h1 {
-        font-size: clamp(3.05rem, 16vw, 4.7rem);
+        font-size: clamp(3.45rem, 16vw, 5.8rem);
       }
 
       .hero-actions,
@@ -1075,37 +1077,6 @@
           <span class="trust-pill">Decision memory</span>
           <span class="trust-pill">Human intent signals</span>
           <span class="trust-pill">AI-readable meaning</span>
-        </div>
-      </div>
-
-      <div class="universe-stage reveal" aria-label="Ayni unified platform visual">
-        <div class="orbit one"></div>
-        <div class="orbit two"></div>
-
-        <div class="floating-chip chip-social">
-          <strong>🌱 Ayni Social</strong>
-          <p>Trust grows through real-world contribution, exchange, and reciprocity.</p>
-        </div>
-
-        <div class="floating-chip chip-alpha">
-          <strong>📈 Ayni Alpha</strong>
-          <p>Decisions become timelines, reflections, and sharper future judgment.</p>
-        </div>
-
-        <div class="core-card">
-          <div class="core-glow">
-            <div class="loop-line loop-left"></div>
-            <div class="loop-line loop-right"></div>
-            <div class="alpha-signal" aria-hidden="true">
-              <svg viewBox="0 0 280 120">
-                <path d="M10 76 C35 76 38 38 58 38 C78 38 80 88 102 88 C126 88 130 52 152 52 C176 52 176 22 198 22 L248 22 L266 8" />
-              </svg>
-            </div>
-          </div>
-          <div class="core-title">
-            <span>One umbrella. Two worlds.</span>
-            <strong>Human value, made visible.</strong>
-          </div>
         </div>
       </div>
     </section>
