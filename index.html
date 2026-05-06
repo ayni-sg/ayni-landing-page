@@ -276,10 +276,12 @@
 
     h1 {
       font-size: clamp(4rem, 9.4vw, 9.4rem);
-      line-height: 0.86;
-      letter-spacing: -0.09em;
+      line-height: 0.95; /* increased to prevent clipping */
+      letter-spacing: -0.08em;
       margin-bottom: 28px;
       max-width: 1060px;
+      word-break: break-word;
+      overflow-wrap: anywhere;
     }
 
     .gradient-text {
@@ -554,6 +556,29 @@
       box-shadow: var(--shadow);
     }
 
+    .world-card::after {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      right: -60px;
+      bottom: -60px;
+      border-radius: 50%;
+      filter: blur(40px);
+      opacity: 0.25;
+      z-index: 0;
+    }
+
+    .world-card > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    .world-card > *:not(.world-visual) {
+      position: relative;
+      z-index: 2;
+    }
+
     .world-social {
       background:
         radial-gradient(circle at 80% 20%, rgba(255, 201, 77, 0.36), transparent 28%),
@@ -640,29 +665,14 @@
       color: var(--alpha-cyan);
     }
 
-    .world-visual {
-      position: absolute;
-      right: 28px;
-      bottom: 28px;
-      width: 210px;
-      height: 210px;
-      border-radius: 42px;
-      display: grid;
-      place-items: center;
-      font-size: 4.5rem;
-      opacity: .94;
+    
+
+    .world-social::after {
+      background: radial-gradient(circle, var(--ayni-amber), var(--ayni-teal));
     }
 
-    .social-visual {
-      background: linear-gradient(135deg, var(--ayni-amber), var(--ayni-teal));
-      box-shadow: 0 28px 60px rgba(255, 148, 24, 0.26);
-    }
-
-    .alpha-visual {
-      background:
-        radial-gradient(circle at 50% 50%, rgba(127,245,255,0.18), transparent 42%),
-        linear-gradient(135deg, var(--alpha-cyan), #0f3b55, var(--alpha-navy));
-      box-shadow: 0 28px 60px rgba(0, 194, 209, 0.18);
+    .world-alpha::after {
+      background: radial-gradient(circle, var(--alpha-cyan), var(--alpha-navy));
     }
 
     .bridge {
@@ -1025,12 +1035,7 @@
         min-height: 560px;
       }
 
-      .world-visual {
-        width: 156px;
-        height: 156px;
-        border-radius: 34px;
-        font-size: 3.35rem;
-      }
+      
 
       .engine-grid,
       .identity-grid {
