@@ -1,18 +1,22 @@
-# Ayni GitHub Pages Landing Page
+# Ayni GitHub Pages Site
 
-This is a static landing page for the parent Ayni ecosystem.
+Static multi-page website for the Ayni ecosystem.
 
-## Files
+## Pages
 
-- `index.html` — main GitHub Pages landing page
-- `assets/` — optional images or previews
+- `index.html` — parent Ayni landing page
+- `social.html` — Ayni Social
+- `evolve.html` — Ayni Evolve
+- `alphapulse.html` — AlphaPulse
+- `crime.html` — Ayni Crime
+- `assets/styles.css` — shared styling
 
-## Deploy to GitHub Pages
+## GitHub Pages Deployment
 
-1. Upload the contents of this folder to your GitHub repository.
-2. Ensure `index.html` is at the root of the repository.
-3. Go to GitHub repo Settings > Pages.
-4. Select the branch you want to publish from, usually `main`.
-5. Save and open the GitHub Pages URL.
+1. Upload all files to the root of your GitHub repository.
+2. Ensure `index.html` is at the root.
+3. Go to GitHub repository Settings > Pages.
+4. Choose your publishing branch, usually `main`.
+5. Save and open your GitHub Pages URL.
 
 No build step is required.
