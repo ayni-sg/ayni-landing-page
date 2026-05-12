@@ -1,39 +1,18 @@
-# Ayni Multi-Page Landing Site
+# Ayni GitHub Pages Landing Page
 
-This package contains the full parent Ayni landing page and focused sub-pages.
+This is a static landing page for the parent Ayni ecosystem.
 
-## Pages
+## Files
 
-- `index.html` — parent Ayni landing page
-- `social.html` — Ayni Social page
-- `alpha.html` — Ayni Alpha page
-- `evolve.html` — Ayni Evolve page
-- `styles.css` — shared theme and design system
-- `script.js` — shared smooth-scroll behavior
+- `index.html` — main GitHub Pages landing page
+- `assets/` — optional images or previews
 
-## Preview locally
+## Deploy to GitHub Pages
 
-```bash
-cd ayni-full-landing-pages
-python3 -m http.server 8088
-```
+1. Upload the contents of this folder to your GitHub repository.
+2. Ensure `index.html` is at the root of the repository.
+3. Go to GitHub repo Settings > Pages.
+4. Select the branch you want to publish from, usually `main`.
+5. Save and open the GitHub Pages URL.
 
-Open:
-
-```text
-http://localhost:8088/index.html
-http://localhost:8088/social.html
-http://localhost:8088/alpha.html
-http://localhost:8088/evolve.html
-```
-
-## Design direction
-
-The parent page stays broad and aspirational. Each sub-page goes deep for its target audience so the Ayni brand does not become overloaded on a single page.
-
-## Brand system
-
-- Parent Ayni: trust + intelligence
-- Ayni Social: trust, reciprocity, community
-- Ayni Alpha: decision intelligence and reflection
-- Ayni Evolve: borderless ownership and real-world asset coordination
+No build step is required.

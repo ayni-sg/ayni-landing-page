@@ -1,92 +1,996 @@
 <!DOCTYPE html>
-<html lang="en-SG">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ayni | Where Trust Becomes Intelligence</title>
-  <meta name="description" content="Ayni connects human values, relationships, and decisions into a living system of trust and intelligence." />
-  <meta name="theme-color" content="#FFF7EA" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Ayni is a human-first ecosystem for connection, mobility, financial intelligence, and trust. Today for you. Tomorrow for me." />
+  <meta name="theme-color" content="#0D6370" />
+
+  <meta property="og:title" content="Ayni | Today for you. Tomorrow for me." />
+  <meta property="og:description" content="Ayni brings together social connection, cross-border mobility, personal financial intelligence, and trust intelligence into one calm, human-first ecosystem." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/ayni-social-preview.png" />
+
+  <title>Ayni | Today for you. Tomorrow for me.</title>
+
+  <style>
+    :root {
+      --sand: #f7f2ea;
+      --sand-soft: #fffaf3;
+      --teal: #0d6370;
+      --teal-deep: #083f49;
+      --navy: #0b1f2a;
+      --amber: #ff9418;
+      --amber-soft: #fff1df;
+      --green: #2bb673;
+      --coral: #ff7b72;
+      --cyan: #00c2d1;
+      --muted: #667780;
+      --line: rgba(13, 99, 112, 0.14);
+      --glass: rgba(255, 255, 255, 0.74);
+      --shadow: 0 24px 80px rgba(11, 31, 42, 0.12);
+      --shadow-soft: 0 16px 46px rgba(11, 31, 42, 0.08);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--navy);
+      background:
+        radial-gradient(circle at 8% 8%, rgba(255, 148, 24, 0.22), transparent 28%),
+        radial-gradient(circle at 92% 3%, rgba(0, 194, 209, 0.22), transparent 26%),
+        radial-gradient(circle at 75% 85%, rgba(43, 182, 115, 0.16), transparent 26%),
+        linear-gradient(180deg, #fffaf3 0%, var(--sand) 44%, #f9fbfa 100%);
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .page-glow {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(18px);
+      opacity: 0.42;
+      animation: float 12s ease-in-out infinite;
+    }
+
+    .orb.one {
+      width: 260px;
+      height: 260px;
+      background: rgba(255, 148, 24, 0.34);
+      top: 80px;
+      left: -80px;
+    }
+
+    .orb.two {
+      width: 340px;
+      height: 340px;
+      background: rgba(13, 99, 112, 0.18);
+      right: -120px;
+      top: 280px;
+      animation-delay: -4s;
+    }
+
+    .orb.three {
+      width: 220px;
+      height: 220px;
+      background: rgba(0, 194, 209, 0.2);
+      left: 55%;
+      bottom: 4%;
+      animation-delay: -7s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+      50% { transform: translate3d(14px, -18px, 0) scale(1.04); }
+    }
+
+    .nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(255, 250, 243, 0.76);
+      border-bottom: 1px solid rgba(13, 99, 112, 0.1);
+    }
+
+    .nav {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 16px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: fit-content;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      color: white;
+      background:
+        radial-gradient(circle at 50% 52%, #ffd57a 0 8%, transparent 9%),
+        conic-gradient(from 140deg, var(--amber), #ffbc67, var(--teal), #0b8793, var(--amber));
+      box-shadow: 0 14px 34px rgba(13, 99, 112, 0.22);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brand-mark::before,
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      width: 24px;
+      height: 15px;
+      border: 3px solid rgba(255,255,255,0.88);
+      border-radius: 999px 999px 999px 4px;
+      transform: rotate(-22deg);
+      left: 7px;
+      top: 13px;
+    }
+
+    .brand-mark::after {
+      transform: rotate(158deg);
+      left: 11px;
+      top: 13px;
+    }
+
+    .brand-name {
+      font-weight: 820;
+      letter-spacing: -0.04em;
+      font-size: 1.24rem;
+    }
+
+    .brand-tag {
+      display: block;
+      color: var(--muted);
+      font-size: 0.76rem;
+      font-weight: 650;
+      letter-spacing: 0.02em;
+      margin-top: -2px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(11, 31, 42, 0.72);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .nav-links a {
+      padding: 10px 12px;
+      border-radius: 999px;
+      transition: 180ms ease;
+    }
+
+    .nav-links a:hover {
+      background: rgba(13, 99, 112, 0.09);
+      color: var(--teal-deep);
+    }
+
+    .nav-cta {
+      background: var(--navy);
+      color: white !important;
+      box-shadow: 0 12px 30px rgba(11, 31, 42, 0.16);
+    }
+
+    .nav-cta:hover {
+      background: var(--teal-deep) !important;
+      color: white !important;
+    }
+
+    main {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      min-height: calc(100vh - 76px);
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(320px, 0.98fr);
+      align-items: center;
+      gap: 42px;
+      padding: 78px 0 54px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border: 1px solid rgba(13, 99, 112, 0.12);
+      background: rgba(255, 255, 255, 0.66);
+      border-radius: 999px;
+      color: var(--teal-deep);
+      font-weight: 800;
+      font-size: 0.86rem;
+      box-shadow: 0 10px 26px rgba(11, 31, 42, 0.05);
+    }
+
+    .eyebrow-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: var(--amber);
+      box-shadow: 0 0 0 6px rgba(255, 148, 24, 0.14);
+    }
+
+    h1 {
+      margin: 24px 0 18px;
+      font-size: clamp(3rem, 7vw, 6.8rem);
+      line-height: 0.92;
+      letter-spacing: -0.075em;
+      max-width: 780px;
+    }
+
+    .hero-gradient {
+      background: linear-gradient(110deg, var(--navy) 0%, var(--teal) 46%, var(--amber) 96%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-copy {
+      color: rgba(11, 31, 42, 0.72);
+      font-size: clamp(1.08rem, 2vw, 1.34rem);
+      line-height: 1.65;
+      max-width: 680px;
+      margin: 0;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 0 20px;
+      border-radius: 999px;
+      font-weight: 850;
+      border: 1px solid transparent;
+      transition: 200ms ease;
+    }
+
+    .button.primary {
+      color: white;
+      background: linear-gradient(135deg, var(--teal-deep), var(--teal));
+      box-shadow: 0 20px 46px rgba(13, 99, 112, 0.24);
+    }
+
+    .button.primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 24px 58px rgba(13, 99, 112, 0.28);
+    }
+
+    .button.secondary {
+      background: rgba(255, 255, 255, 0.76);
+      border-color: rgba(13, 99, 112, 0.14);
+      color: var(--teal-deep);
+    }
+
+    .button.secondary:hover {
+      background: white;
+      transform: translateY(-2px);
+    }
+
+    .trust-line {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 26px;
+      color: rgba(11, 31, 42, 0.56);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .trust-pill {
+      padding: 8px 11px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.62);
+      border: 1px solid rgba(13, 99, 112, 0.08);
+    }
+
+    .ecosystem-card {
+      position: relative;
+      border-radius: 42px;
+      background: linear-gradient(150deg, rgba(255,255,255,0.84), rgba(255,255,255,0.5));
+      border: 1px solid rgba(255,255,255,0.84);
+      box-shadow: var(--shadow);
+      padding: 22px;
+      overflow: hidden;
+    }
+
+    .ecosystem-card::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      background:
+        radial-gradient(circle at 20% 15%, rgba(255,148,24,0.20), transparent 28%),
+        radial-gradient(circle at 80% 12%, rgba(0,194,209,0.19), transparent 28%),
+        radial-gradient(circle at 64% 78%, rgba(43,182,115,0.16), transparent 32%);
+      z-index: 0;
+    }
+
+    .ecosystem-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 14px;
+    }
+
+    .mini-map {
+      min-height: 390px;
+      position: relative;
+      border-radius: 32px;
+      background:
+        linear-gradient(145deg, rgba(11,31,42,0.96), rgba(13,99,112,0.86)),
+        radial-gradient(circle at 30% 20%, rgba(255,148,24,0.36), transparent 20%);
+      overflow: hidden;
+      padding: 24px;
+      color: white;
+    }
+
+    .mini-map::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.055) 1px, transparent 1px);
+      background-size: 32px 32px;
+      mask-image: radial-gradient(circle at 50% 45%, black, transparent 78%);
+    }
+
+    .pulse-line {
+      position: absolute;
+      left: 20px;
+      right: 20px;
+      top: 48%;
+      height: 120px;
+      opacity: 0.78;
+    }
+
+    .node {
+      position: absolute;
+      border-radius: 24px;
+      padding: 14px;
+      min-width: 148px;
+      backdrop-filter: blur(14px);
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      box-shadow: 0 20px 52px rgba(0,0,0,0.14);
+    }
+
+    .node strong {
+      display: block;
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+
+    .node span {
+      color: rgba(255,255,255,0.74);
+      font-size: 0.78rem;
+      font-weight: 650;
+      line-height: 1.4;
+    }
+
+    .node.social { top: 28px; left: 24px; }
+    .node.evolve { top: 86px; right: 24px; }
+    .node.alpha { bottom: 32px; left: 34px; }
+    .node.crime { bottom: 44px; right: 30px; }
+
+    .center-seed {
+      position: absolute;
+      width: 92px;
+      height: 92px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 32px;
+      display: grid;
+      place-items: center;
+      font-size: 2rem;
+      font-weight: 900;
+      background:
+        radial-gradient(circle at 50% 48%, #ffe2a5 0 11%, transparent 12%),
+        conic-gradient(from 90deg, var(--amber), var(--cyan), var(--green), var(--amber));
+      box-shadow: 0 0 0 10px rgba(255,255,255,0.08), 0 22px 56px rgba(0,0,0,0.25);
+    }
+
+    .section { padding: 76px 0; }
+
+    .section-heading {
+      max-width: 790px;
+      margin-bottom: 34px;
+    }
+
+    .kicker {
+      color: var(--teal);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.78rem;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 4.1rem);
+      line-height: 1;
+      letter-spacing: -0.06em;
+    }
+
+    .section-text {
+      color: rgba(11, 31, 42, 0.68);
+      font-size: 1.1rem;
+      line-height: 1.65;
+      margin: 16px 0 0;
+      max-width: 720px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .product-card {
+      min-height: 360px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-radius: var(--radius-xl);
+      padding: 24px;
+      border: 1px solid rgba(13,99,112,0.1);
+      background: rgba(255,255,255,0.72);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+      position: relative;
+      transition: 220ms ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 28px 72px rgba(11, 31, 42, 0.14);
+    }
+
+    .product-card::after {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border-radius: 999px;
+      right: -90px;
+      top: -90px;
+      background: var(--accent);
+      opacity: 0.15;
+    }
+
+    .icon-bubble {
+      width: 58px;
+      height: 58px;
+      border-radius: 22px;
+      display: grid;
+      place-items: center;
+      font-size: 1.5rem;
+      background: var(--accent-soft);
+      color: var(--accent-strong);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.68);
+    }
+
+    .product-card h3 {
+      font-size: 1.54rem;
+      letter-spacing: -0.035em;
+      margin: 22px 0 10px;
+    }
+
+    .product-card p {
+      color: rgba(11,31,42,0.66);
+      line-height: 1.58;
+      margin: 0;
+      font-weight: 560;
+    }
+
+    .product-card .tag {
+      display: inline-flex;
+      width: fit-content;
+      margin-top: 22px;
+      padding: 8px 11px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.62);
+      border: 1px solid rgba(13,99,112,0.08);
+      color: rgba(11,31,42,0.62);
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    .product-card.social {
+      --accent: #ff9418;
+      --accent-soft: #fff0dc;
+      --accent-strong: #bd6505;
+    }
+
+    .product-card.evolve {
+      --accent: #0d6370;
+      --accent-soft: #e3f2f4;
+      --accent-strong: #0d6370;
+    }
+
+    .product-card.alpha {
+      --accent: #00c2d1;
+      --accent-soft: #e2fbfd;
+      --accent-strong: #08727b;
+    }
+
+    .product-card.crime {
+      --accent: #2bb673;
+      --accent-soft: #e5f8ee;
+      --accent-strong: #187449;
+    }
+
+    .story-panel {
+      display: grid;
+      grid-template-columns: 0.86fr 1.14fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .quote-card,
+    .principles {
+      border-radius: var(--radius-xl);
+      padding: 30px;
+      background: rgba(255,255,255,0.74);
+      border: 1px solid rgba(13,99,112,0.1);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .quote-card {
+      background:
+        radial-gradient(circle at 18% 18%, rgba(255,148,24,0.22), transparent 34%),
+        linear-gradient(145deg, rgba(13,99,112,0.95), rgba(11,31,42,0.94));
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 420px;
+    }
+
+    .quote-card .large {
+      font-size: clamp(2.2rem, 4vw, 4.4rem);
+      line-height: 0.96;
+      letter-spacing: -0.07em;
+      font-weight: 900;
+      margin: 0;
+    }
+
+    .quote-card .small {
+      color: rgba(255,255,255,0.72);
+      line-height: 1.65;
+      font-size: 1.02rem;
+      margin: 28px 0 0;
+    }
+
+    .principle-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .principle {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 16px;
+      border-radius: 22px;
+      background: rgba(247,242,234,0.68);
+      border: 1px solid rgba(13,99,112,0.08);
+    }
+
+    .principle-number {
+      width: 44px;
+      height: 44px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: white;
+      color: var(--teal);
+      font-weight: 900;
+      box-shadow: 0 10px 24px rgba(11,31,42,0.06);
+    }
+
+    .principle strong {
+      display: block;
+      margin-bottom: 4px;
+      letter-spacing: -0.02em;
+    }
+
+    .principle span {
+      color: rgba(11,31,42,0.62);
+      line-height: 1.5;
+      font-weight: 560;
+    }
+
+    .journey {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .journey-card {
+      border-radius: var(--radius-xl);
+      padding: 26px;
+      min-height: 250px;
+      background: rgba(255,255,255,0.74);
+      border: 1px solid rgba(13,99,112,0.1);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .journey-card .step {
+      width: fit-content;
+      padding: 8px 12px;
+      border-radius: 999px;
+      color: var(--teal-deep);
+      background: rgba(13,99,112,0.08);
+      font-weight: 900;
+      font-size: 0.82rem;
+    }
+
+    .journey-card h3 {
+      margin: 22px 0 10px;
+      font-size: 1.4rem;
+      letter-spacing: -0.035em;
+    }
+
+    .journey-card p {
+      margin: 0;
+      color: rgba(11,31,42,0.64);
+      line-height: 1.58;
+      font-weight: 560;
+    }
+
+    .final-cta {
+      margin: 52px 0 88px;
+      padding: clamp(30px, 7vw, 70px);
+      border-radius: 44px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 20% 18%, rgba(255,148,24,0.24), transparent 24%),
+        radial-gradient(circle at 88% 12%, rgba(0,194,209,0.22), transparent 26%),
+        linear-gradient(135deg, var(--navy), var(--teal-deep));
+      color: white;
+      position: relative;
+      box-shadow: 0 34px 90px rgba(11,31,42,0.22);
+    }
+
+    .final-cta h2 { max-width: 760px; }
+
+    .final-cta p {
+      color: rgba(255,255,255,0.72);
+      max-width: 650px;
+      line-height: 1.65;
+      font-size: 1.1rem;
+      margin: 18px 0 0;
+    }
+
+    .final-cta .button {
+      margin-top: 28px;
+      background: white;
+      color: var(--navy);
+    }
+
+    footer {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 42px;
+      color: rgba(11,31,42,0.55);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-size: 0.92rem;
+      font-weight: 650;
+      border-top: 1px solid rgba(13,99,112,0.1);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a:hover { color: var(--teal-deep); }
+
+    @media (max-width: 1040px) {
+      .hero,
+      .story-panel { grid-template-columns: 1fr; }
+
+      .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+      .mini-map { min-height: 430px; }
+    }
+
+    @media (max-width: 760px) {
+      .nav { align-items: flex-start; }
+
+      .nav-links { display: none; }
+
+      .hero {
+        min-height: auto;
+        padding: 54px 0 36px;
+      }
+
+      h1 { font-size: clamp(3.4rem, 18vw, 5rem); }
+
+      .product-grid,
+      .journey { grid-template-columns: 1fr; }
+
+      .product-card { min-height: 300px; }
+
+      .node {
+        min-width: 130px;
+        padding: 12px;
+      }
+
+      .node.evolve,
+      .node.crime { right: 14px; }
+
+      .node.social,
+      .node.alpha { left: 14px; }
+
+      .center-seed {
+        width: 78px;
+        height: 78px;
+        border-radius: 26px;
+      }
+
+      .section { padding: 54px 0; }
+
+      .quote-card { min-height: 340px; }
+    }
+  </style>
 </head>
 <body>
-  
-<header class="shell nav">
-  <a class="brand" href="index.html" aria-label="Ayni home">
-    <span class="brand-mark" aria-hidden="true"></span>
-    <span>AYNI</span>
-  </a>
-  <nav class="nav-links" aria-label="Primary navigation">
-    <a class="active" href="index.html">Home</a><a class="" href="social.html">Ayni Social</a><a class="" href="alpha.html">Ayni Alpha</a><a class="" href="evolve.html">Ayni Evolve</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  <a class="nav-cta" href="#contact">Enter App <span>→</span></a>
-</header>
-
-  <main>
-  
-<section class="shell hero" id="about">
-  <div>
-    <h1 class="hero-title">Where trust becomes <span class="highlight">intelligence</span></h1>
-    <p class="hero-copy">Ayni connects human values, relationships, and decisions into a living system of trust and intelligence.</p>
-    <div class="trust-row" aria-label="Ayni values">
-      <span class="trust-item"><span class="trust-icon">♢</span> Built on Trust</span>
-      <span class="trust-item"><span class="trust-icon">♧</span> Human First</span>
-      <span class="trust-item"><span class="trust-icon">✧</span> AI Enhanced</span>
-      <span class="trust-item"><span class="trust-icon">◎</span> Borderless Impact</span>
-    </div>
-    <a class="btn-primary" href="#worlds">Explore the worlds <span>→</span></a>
+  <div class="page-glow" aria-hidden="true">
+    <div class="orb one"></div>
+    <div class="orb two"></div>
+    <div class="orb three"></div>
   </div>
 
-  <div class="hero-visual" aria-label="Ayni global intelligence visual">
-    <div class="globe">
-      <span class="orbit-ring"></span><span class="orbit-ring two"></span>
-      <span class="node a"></span><span class="node b"></span><span class="node c"></span>
-    </div>
-    <div class="chip one"><span class="icon" style="color:#ff9418;">♧</span>Actions that<br />create value</div>
-    <div class="chip two"><span class="icon" style="color:#b65cff;">♧</span>Relationships<br />that matter</div>
-    <div class="chip three"><span class="icon" style="color:#2d9cdb;">↗</span>Decisions that<br />move you forward</div>
-    <div class="chip four"><span class="icon" style="color:#52c6c2;">✦</span>Intelligence that<br />grows with you</div>
-  </div>
-</section>
+  <header class="nav-wrap">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Ayni home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>
+          <span class="brand-name">Ayni</span>
+          <span class="brand-tag">Today for you. Tomorrow for me.</span>
+        </span>
+      </a>
 
-<section class="shell" id="worlds">
-  <div class="world-heading">THREE WORLDS. ONE AYNI.</div>
-  <div class="worlds">
-    <article class="card social">
-      <div class="card-top"><div class="card-icon">♧</div><div><h2>Ayni Social</h2><strong>Trust in every connection</strong></div></div>
-      <p>Build meaningful relationships, engage communities, and grow together.</p>
-      <a href="social.html">Learn more <span>→</span></a>
-    </article>
-    <article class="card alpha">
-      <div class="card-top"><div class="card-icon">↗</div><div><h2>Ayni Alpha</h2><strong>Intelligence in every decision</strong></div></div>
-      <p>Make smarter decisions with real-time insights and AI-powered intelligence.</p>
-      <a href="alpha.html">Learn more <span>→</span></a>
-    </article>
-    <article class="card evolve">
-      <div class="card-top"><div class="card-icon">◎</div><div><h2>Ayni Evolve</h2><strong>Beyond borders, own the world</strong></div></div>
-      <p>Discover, own, and manage real-world assets across countries with trust.</p>
-      <a href="evolve.html">Learn more <span>→</span></a>
-    </article>
-  </div>
-</section>
+      <div class="nav-links">
+        <a href="#ecosystem">Ecosystem</a>
+        <a href="#why">Why Ayni</a>
+        <a href="#journey">How it feels</a>
+        <a class="nav-cta" href="mailto:hello@ayni.app">Join early access</a>
+      </div>
+    </nav>
+  </header>
 
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <div class="eyebrow"><span class="eyebrow-dot"></span> A human-first ecosystem for modern life</div>
+        <h1 id="hero-title">One calm place for <span class="hero-gradient">connection, movement, money, and trust.</span></h1>
+        <p class="hero-copy">
+          Ayni brings together the everyday moments that shape your life: the people around you, the places you may move to, the financial decisions you make, and the trust signals that keep communities safe.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#ecosystem">Explore Ayni</a>
+          <a class="button secondary" href="mailto:hello@ayni.app">Get early access</a>
+        </div>
+        <div class="trust-line" aria-label="Ayni values">
+          <span class="trust-pill">Private by design</span>
+          <span class="trust-pill">Built for real people</span>
+          <span class="trust-pill">Simple surface, deep intelligence</span>
+        </div>
+      </div>
+
+      <aside class="ecosystem-card" aria-label="Ayni ecosystem visual map">
+        <div class="ecosystem-inner">
+          <div class="mini-map">
+            <svg class="pulse-line" viewBox="0 0 520 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M8 72 C64 72 70 72 96 72 C119 72 120 32 138 32 C156 32 157 96 176 96 C197 96 196 52 216 52 C246 52 248 72 284 72 C330 72 329 72 362 72 C395 72 398 44 424 44 C455 44 461 72 512 72" stroke="rgba(255,255,255,0.56)" stroke-width="6" stroke-linecap="round"/>
+              <path d="M8 72 C64 72 70 72 96 72 C119 72 120 32 138 32 C156 32 157 96 176 96 C197 96 196 52 216 52 C246 52 248 72 284 72 C330 72 329 72 362 72 C395 72 398 44 424 44 C455 44 461 72 512 72" stroke="url(#grad)" stroke-width="3" stroke-linecap="round"/>
+              <defs>
+                <linearGradient id="grad" x1="8" y1="72" x2="512" y2="72" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#FF9418"/>
+                  <stop offset="0.5" stop-color="#00C2D1"/>
+                  <stop offset="1" stop-color="#2BB673"/>
+                </linearGradient>
+              </defs>
+            </svg>
+
+            <div class="node social"><strong>Ayni Social</strong><span>Community, help, moments, belonging.</span></div>
+            <div class="node evolve"><strong>Ayni Evolve</strong><span>Property, relocation, life mobility.</span></div>
+            <div class="center-seed">A</div>
+            <div class="node alpha"><strong>AlphaPulse</strong><span>Personal financial clarity.</span></div>
+            <div class="node crime"><strong>Ayni Crime</strong><span>Safety, fraud, AML, trust.</span></div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="ecosystem" class="section" aria-labelledby="ecosystem-title">
+      <div class="section-heading">
+        <div class="kicker">The ecosystem</div>
+        <h2 id="ecosystem-title">Different products. One shared promise.</h2>
+        <p class="section-text">
+          Each Ayni product solves a different part of modern life, but they all follow the same principle: make complex decisions feel calmer, safer, and more human.
+        </p>
+      </div>
+
+      <div class="product-grid">
+        <article class="product-card social">
+          <div>
+            <div class="icon-bubble">◎</div>
+            <h3>Ayni Social</h3>
+            <p>For discovering people, moments, and communities around you. A softer way to build belonging in real neighborhoods and everyday circles.</p>
+          </div>
+          <span class="tag">Human connection</span>
+        </article>
+
+        <article class="product-card evolve">
+          <div>
+            <div class="icon-bubble">⌂</div>
+            <h3>Ayni Evolve</h3>
+            <p>For people exploring homes, relocation, and life beyond borders. From property discovery to confidence in the next chapter.</p>
+          </div>
+          <span class="tag">Mobility and property</span>
+        </article>
+
+        <article class="product-card alpha">
+          <div>
+            <div class="icon-bubble">⌁</div>
+            <h3>AlphaPulse</h3>
+            <p>For understanding what you bought, why you bought it, and how your investing behavior evolves. Personal finance with memory and context.</p>
+          </div>
+          <span class="tag">Financial intelligence</span>
+        </article>
+
+        <article class="product-card crime">
+          <div>
+            <div class="icon-bubble">◈</div>
+            <h3>Ayni Crime</h3>
+            <p>For safer ecosystems where suspicious patterns, scams, fraud, AML signals, and compliance risks are easier to understand and act on.</p>
+          </div>
+          <span class="tag">Trust and safety</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="why" class="section" aria-labelledby="why-title">
+      <div class="story-panel">
+        <div class="quote-card">
+          <div>
+            <div class="kicker" style="color:#ffd57a;">The Ayni belief</div>
+            <p class="large">Today for you. Tomorrow for me.</p>
+          </div>
+          <p class="small">
+            Ayni is inspired by reciprocity: the idea that people, communities, and systems become stronger when help, trust, and intelligence flow both ways.
+          </p>
+        </div>
+
+        <div class="principles">
+          <div class="kicker">Why it matters</div>
+          <h2 id="why-title">Designed to feel simple, even when life is not.</h2>
+          <p class="section-text">
+            Ayni is not just a collection of apps. It is a design language for confidence: warm, clear, privacy-aware, and built around decisions that matter.
+          </p>
+
+          <div class="principle-list">
+            <div class="principle">
+              <div class="principle-number">1</div>
+              <div><strong>Calm over clutter</strong><span>Every screen should reduce anxiety, not add more dashboards to your life.</span></div>
+            </div>
+            <div class="principle">
+              <div class="principle-number">2</div>
+              <div><strong>Context over noise</strong><span>Ayni turns scattered signals into helpful, human-readable guidance.</span></div>
+            </div>
+            <div class="principle">
+              <div class="principle-number">3</div>
+              <div><strong>Trust over virality</strong><span>The ecosystem is built around meaningful connection, safer decisions, and long-term value.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="journey" class="section" aria-labelledby="journey-title">
+      <div class="section-heading">
+        <div class="kicker">How it feels</div>
+        <h2 id="journey-title">Ayni meets you where life is happening.</h2>
+        <p class="section-text">
+          Whether you are joining a new community, moving across borders, reviewing your portfolio, or protecting people from risk, Ayni is designed to make the next step feel obvious.
+        </p>
+      </div>
+
+      <div class="journey">
+        <article class="journey-card">
+          <span class="step">Discover</span>
+          <h3>See what matters</h3>
+          <p>Find relevant people, places, signals, opportunities, or risks without drowning in feeds and noise.</p>
+        </article>
+
+        <article class="journey-card">
+          <span class="step">Understand</span>
+          <h3>Know why it matters</h3>
+          <p>Get context that explains what is happening, what changed, and what you may want to consider next.</p>
+        </article>
+
+        <article class="journey-card">
+          <span class="step">Act</span>
+          <h3>Move with confidence</h3>
+          <p>Take the next step with a calmer sense of direction, whether it is social, financial, personal, or protective.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="final-cta" aria-labelledby="cta-title">
+      <div class="kicker" style="color:#ffd57a;">Early access</div>
+      <h2 id="cta-title">Ayni is being shaped for people who want technology to feel more human.</h2>
+      <p>
+        Join the early circle and follow the ecosystem as Ayni Social, Ayni Evolve, AlphaPulse, and Ayni Crime grow into a connected trust economy.
+      </p>
+      <a class="button" href="mailto:hello@ayni.app">Join early access</a>
+    </section>
   </main>
-  
-<footer class="shell footer" id="contact">
-  <a class="brand" href="index.html" aria-label="Ayni home">
-    <span class="brand-mark" aria-hidden="true"></span>
-    <span>AYNI</span>
-  </a>
-  <p>Today for you, tomorrow for me.</p>
-  <div class="footer-links">
-    <a href="social.html">Social</a>
-    <a href="alpha.html">Alpha</a>
-    <a href="evolve.html">Evolve</a>
-    <a href="mailto:hello@ayni.app">hello@ayni.app</a>
-  </div>
-</footer>
-<script src="script.js"></script>
 
+  <footer>
+    <div>© <span id="year"></span> Ayni. Today for you. Tomorrow for me.</div>
+    <div class="footer-links">
+      <a href="mailto:hello@ayni.app">hello@ayni.app</a>
+      <a href="#ecosystem">Products</a>
+      <a href="#top">Back to top</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
