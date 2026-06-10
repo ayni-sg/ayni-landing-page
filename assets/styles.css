@@ -391,6 +391,42 @@ footer {
     color: var(--text-secondary);
 }
 
+/* Floating Social CTA */
+.social-cta {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background: linear-gradient(135deg, #F77737 0%, #C13584 100%);
+    color: white;
+    width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    border-radius: 999px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    z-index: 1200;
+    text-decoration: none;
+}
+.social-cta i { font-size: 1.1rem; }
+
+/* Compact hero subtitle and declutter on small screens */
+.hero-subtitle {
+    max-height: 3.6rem; /* ~2 lines */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media (max-width: 480px) {
+    .hero { padding: 40px 4% 30px 4%; }
+    .hero-subtitle { font-size: 1rem; max-width: 100%; }
+    .hero-buttons .btn-outline { display: none; }
+    .btn { padding: 14px; }
+    .section-heading { font-size: 1.6rem; }
+    .features-grid, .cards-grid { gap: 20px; }
+    .stats-container { display: none; }
+    .whatsapp-cta { padding: 30px 20px; }
+}
+
 /* Mobile */
 @media(max-width: 768px) {
     .menu-toggle {
