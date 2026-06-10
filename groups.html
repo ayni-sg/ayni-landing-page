@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a Community | Ayni Social</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <a href="index.html" class="logo">Ayni <span>Social</span></a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="groups.html">Communities</a>
+            <a href="skills.html">Skills</a>
+            <a href="projects.html">Projects</a>
+            <a href="products.html">Marketplace</a>
+        </nav>
+    </header>
+
+    <main class="form-page-container">
+        <div class="glass-form-container">
+            <h1>Create a Community</h1>
+            <p>Define the purpose and values of your new community. Ayni Social is built on collective ownership and mutual aid.</p>
+            
+            <form action="https://formspree.io/f/your-form-id" method="POST" class="interactive-form">
+                <div class="form-group">
+                    <label for="group_name">Community Name</label>
+                    <input type="text" id="group_name" name="group_name" placeholder="e.g., Tiong Bahru Resource Sharing" required>
+                </div>
+                <div class="form-group">
+                    <label for="location">Primary Location</label>
+                    <input type="text" id="location" name="location" placeholder="e.g., Central Singapore / Neighborhood" required>
+                </div>
+                <div class="form-group">
+                    <label for="category">Community Type</label>
+                    <select id="category" name="category">
+                        <option value="neighborhood">Neighborhood / Local Hub</option>
+                        <option value="guild">Professional Guild / Skill Group</option>
+                        <option value="interest">Interest / Hobby Circle</option>
+                        <option value="aid">Mutual Aid / Support Network</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="vision">What is your mission?</label>
+                    <textarea id="vision" name="vision" rows="4" placeholder="How will this community practice reciprocity? What value will it create for members?" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Launch Community Idea</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Ayni Social. Built on the principles of reciprocity and mutual aid.</p>
+    </footer>
+</body>
+</html>

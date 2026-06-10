@@ -1,128 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Ayni is a human-first ecosystem for connection, mobility, financial intelligence, and trust." />
-  <meta name="theme-color" content="#0D6370" />
-  <meta property="og:title" content="Ayni | Today for you. Tomorrow for me." />
-  <meta property="og:description" content="Ayni is a human-first ecosystem for connection, mobility, financial intelligence, and trust." />
-  <meta property="og:type" content="website" />
-  <title>Ayni | Today for you. Tomorrow for me.</title>
-  <link rel="stylesheet" href="assets/styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayni Social | Build Communities. Share Skills. Create Together.</title>
+    <meta name="description" content="A social platform built around reciprocity, collaboration, and collective growth. Join the Ayni movement today.">
+    
+    <!-- Open Graph / SEO -->
+    <meta property="og:title" content="Ayni Social | Build Communities. Share Skills. Create Together.">
+    <meta property="og:description" content="A social platform built around reciprocity, collaboration, and collective growth.">
+    <meta property="og:url" content="https://ayni.sg/">
+
+    <!-- Design System -->
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Ayni Social",
+      "url": "https://ayni.sg",
+      "description": "A social network built on reciprocity and mutual aid.",
+      "applicationCategory": "SocialNetworking Application"
+    }
+    </script>
 </head>
-<body class="home-theme">
-  <header class="nav-wrap">
-    <nav class="nav" aria-label="Main navigation">
-      <a class="brand" href="index.html" aria-label="Ayni home">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span>
-          <span class="brand-name">Ayni</span>
-          <span class="brand-tag">Today for you. Tomorrow for me.</span>
-        </span>
-      </a>
-      <div class="nav-links">
-        <a class="active" href="index.html">Home</a>
-        <a class="" href="social.html">Social</a>
-        <a class="" href="evolve.html">Evolve</a>
-        <a class="" href="alphapulse.html">AlphaPulse</a>
-        <a class="" href="crime.html">Crime</a>
-        <a class="nav-cta" href="mailto:hello@ayni.app">Early access</a>
-      </div>
-    </nav>
-  </header>
+<body>
 
-  <main>
+    <header class="navbar">
+        <a href="index.html" class="logo">Ayni <span>Social</span></a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="groups.html">Communities</a>
+            <a href="skills.html">Skills</a>
+            <a href="projects.html">Projects</a>
+            <a href="products.html">Marketplace</a>
+            <a href="about.html">About</a>
+            <a href="#waitlist" class="btn btn-secondary">Join Waitlist</a>
+        </nav>
+    </header>
 
-    <section id="top" class="hero" aria-labelledby="hero-title">
-      <div>
-        <div class="eyebrow"><span class="eyebrow-dot"></span> A human-first ecosystem for modern life</div>
-        <h1 id="hero-title">One calm place for <span class="hero-gradient">connection, movement, money, and trust.</span></h1>
-        <p class="hero-copy">Ayni brings together the everyday moments that shape your life: the people around you, the places you may move to, the financial decisions you make, and the trust signals that keep communities safe.</p>
-        <div class="hero-actions">
-          <a class="button primary" href="#ecosystem">Explore Ayni</a>
-          <a class="button secondary" href="mailto:hello@ayni.app">Get early access</a>
+    <!-- Hero Section -->
+    <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-badge">🌱 Rooted in Reciprocity</div>
+        <h1 id="hero-title">Build Communities.<br>Share Skills. <span>Create Together.</span></h1>
+        <p class="hero-subtitle">
+            A social platform built around reciprocity, collaboration, and collective growth. Move beyond algorithms and followers to real-world impact.
+        </p>
+        <div class="hero-buttons">
+            <a href="groups.html" class="btn btn-primary">Create Community</a>
+            <a href="groups.html" class="btn btn-outline">Explore Groups</a>
         </div>
-      </div>
-      <aside class="visual-card">
-        <div class="ecosystem-map">
-          <div class="node social"><strong>Ayni Social</strong><span>Community, help, moments, belonging.</span></div>
-          <div class="node evolve"><strong>Ayni Evolve</strong><span>Property, relocation, life mobility.</span></div>
-          <div class="center-seed">A</div>
-          <div class="node alpha"><strong>AlphaPulse</strong><span>Personal financial clarity.</span></div>
-          <div class="node crime"><strong>Ayni Crime</strong><span>Safety, fraud, AML, trust.</span></div>
-        </div>
-      </aside>
     </section>
 
-    <section id="ecosystem" class="section">
-      <div class="section-heading">
-        <div class="kicker">The ecosystem</div>
-        <h2>Different products. One shared promise.</h2>
-        <p class="section-text">Each Ayni product solves a different part of modern life, but they all follow the same principle: make complex decisions feel calmer, safer, and more human.</p>
-      </div>
-      <div class="product-grid">
-        <a class="product-card social-theme" href="social.html">
-          <div><div class="icon-bubble">◎</div><h3>Ayni Social</h3><p>Discover people, moments, and communities around you. A softer way to build belonging.</p></div>
-          <span class="tag">Explore Social</span>
-        </a>
-        <a class="product-card evolve-theme" href="evolve.html">
-          <div><div class="icon-bubble">⌂</div><h3>Ayni Evolve</h3><p>Explore homes, relocation, and life beyond borders with more confidence and clarity.</p></div>
-          <span class="tag">Explore Evolve</span>
-        </a>
-        <a class="product-card alpha-theme" href="alphapulse.html">
-          <div><div class="icon-bubble">⌁</div><h3>AlphaPulse</h3><p>Understand what you bought, why you bought it, and how your investing behavior evolves.</p></div>
-          <span class="tag">Explore AlphaPulse</span>
-        </a>
-        <a class="product-card crime-theme" href="crime.html">
-          <div><div class="icon-bubble">◈</div><h3>Ayni Crime</h3><p>Make suspicious patterns, scams, fraud, AML signals, and compliance risks easier to understand.</p></div>
-          <span class="tag">Explore Crime</span>
-        </a>
-      </div>
+    <!-- Stats Showcase -->
+    <section class="stats-container">
+        <div class="stat-card"><h3>100%</h3><p>Contribution-Led</p></div>
+        <div class="stat-card"><h3>SG</h3><p>Neighborhood First</p></div>
+        <div class="stat-card"><h3>AI</h3><p>Discoverable Needs</p></div>
     </section>
 
-    <section class="section">
-      <div class="split">
-        <div class="quote-card dark">
-          <div>
-            <div class="kicker" style="color:#ffd57a;">The Ayni belief</div>
-            <p class="large">Today for you. Tomorrow for me.</p>
-          </div>
-          <p>Ayni is inspired by reciprocity: the idea that people, communities, and systems become stronger when help, trust, and intelligence flow both ways.</p>
+    <!-- Section 2: How Ayni Works -->
+    <section class="features-section" aria-labelledby="how-it-works">
+        <h2 id="how-it-works" class="section-heading">How Ayni Works</h2>
+        <p class="section-subheading">Ayni Social replaces followers and algorithms with contribution and collective growth.</p>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="icon">✨</div>
+                <h3>Share</h3>
+                <p>Offer skills, knowledge, and resources. Reputation is built through helping, not popularity.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🤝</div>
+                <h3>Connect</h3>
+                <p>Find people who need what you offer or discover groups organizing around real local needs.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">📈</div>
+                <h3>Grow</h3>
+                <p>Build collaborative projects, solve problems, and create value together through mutual aid.</p>
+            </div>
         </div>
-        <div class="split-card">
-          <div class="kicker">Why it matters</div>
-          <h2>Designed to feel simple, even when life is not.</h2>
-          <p class="section-text">Ayni is not just a collection of apps. It is a design language for confidence: warm, clear, privacy-aware, and built around decisions that matter.</p>
-          <div class="timeline" style="margin-top:24px;">
-            <div class="timeline-item"><div class="step-number">1</div><div><strong>Calm over clutter</strong><span>Every screen should reduce anxiety, not add more dashboards to your life.</span></div></div>
-            <div class="timeline-item"><div class="step-number">2</div><div><strong>Context over noise</strong><span>Ayni turns scattered signals into helpful, human-readable guidance.</span></div></div>
-            <div class="timeline-item"><div class="step-number">3</div><div><strong>Trust over virality</strong><span>The ecosystem is built around meaningful connection, safer decisions, and long-term value.</span></div></div>
-          </div>
+    </section>
+
+    <!-- Section 5: Project Collaboration -->
+    <section class="showcase-section" style="padding-bottom: 80px;">
+        <h2 class="section-heading">Collaborative Projects</h2>
+        <p class="section-subheading">Join ventures where every member is a contributor, not just a consumer.</p>
+        <div class="cards-grid">
+            <div class="feature-card">
+                <h3>Neighborhood Solar Hub</h3>
+                <p>Collaborating on a community-owned solar installation for shared energy savings.</p>
+                <div style="margin-top: 20px; font-size: 0.9rem;"><strong>Needs:</strong> Electricians, Legal advice</div>
+            </div>
+            <div class="feature-card">
+                <h3>Open Source Education</h3>
+                <p>Building a free, local repository of technical workshops taught by neighborhood experts.</p>
+                <div style="margin-top: 20px; font-size: 0.9rem;"><strong>Needs:</strong> Writers, Mentors</div>
+            </div>
+            <div class="feature-card">
+                <h3>Mutual Aid Food Box</h3>
+                <p>A logistics project to distribute surplus groceries from local shops to those in need.</p>
+                <div style="margin-top: 20px; font-size: 0.9rem;"><strong>Needs:</strong> Drivers, Organizers</div>
+            </div>
         </div>
-      </div>
     </section>
 
-    <section class="final-cta">
-      <div class="kicker" style="color:#ffd57a;">Early access</div>
-      <h2>Ayni is being shaped for people who want technology to feel more human.</h2>
-      <p>Join the early circle and follow the ecosystem as Ayni Social, Ayni Evolve, AlphaPulse, and Ayni Crime grow into a connected trust economy.</p>
-      <a class="button" href="mailto:hello@ayni.app">Join early access</a>
+    <!-- Section 3: Community Showcase -->
+    <section class="showcase-section">
+        <h2 class="section-heading">Community Showcase</h2>
+        <p class="section-subheading">Discover vibrant groups organizing around shared interests and local needs.</p>
+        <div class="cards-grid">
+            <a href="groups.html" class="interactive-card">
+                <h3>Singapore Parents Circle &rarr;</h3>
+                <p>Reciprocity-based support for modern parenting, resource sharing, and neighborhood playgroups.</p>
+            </a>
+            <a href="groups.html" class="interactive-card">
+                <h3>AI Builders Guild &rarr;</h3>
+                <p>A community for developers to collaborate on open-source AI projects and share technical mentorship.</p>
+            </a>
+            <a href="groups.html" class="interactive-card">
+                <h3>Urban Harvesters &rarr;</h3>
+                <p>Hyper-local gardening groups sharing tools, seeds, and the fruits of collective labor.</p>
+            </a>
+        </div>
     </section>
 
-  </main>
+    <!-- Section 4: Skill Exchange -->
+    <section class="showcase-section" style="background: rgba(47, 191, 113, 0.03); padding: 80px 0;">
+        <h2 class="section-heading">Skill Marketplace</h2>
+        <p class="section-subheading">Exchange what you know for what you need. No currency required, just reciprocity.</p>
+        <div class="cards-grid">
+            <div class="feature-card">
+                <h3>Teach Python</h3>
+                <p>I can help you build your first automation script or web scraper.</p>
+                <p style="margin-top: 20px; font-weight: 700; color: var(--secondary);">Offered by Sarah K.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Learn Mandarin</h3>
+                <p>Looking for a conversation partner to improve my business Mandarin.</p>
+                <p style="margin-top: 20px; font-weight: 700; color: var(--accent);">Needed by David L.</p>
+            </div>
+            <div class="feature-card">
+                <h3>UX Mentorship</h3>
+                <p>Offering portfolio reviews and career advice for aspiring designers.</p>
+                <p style="margin-top: 20px; font-weight: 700; color: var(--secondary);">Offered by Marc V.</p>
+            </div>
+        </div>
+    </section>
 
-  <footer>
-    <div class="footer-inner">
-      <div>© <span id="year"></span> Ayni. Today for you. Tomorrow for me.</div>
-      <div class="footer-links">
-        <a href="mailto:hello@ayni.app">hello@ayni.app</a>
-        <a href="index.html">Home</a>
-        <a href="#top">Back to top</a>
-      </div>
-    </div>
-  </footer>
+    <!-- Section 6: Local Marketplace -->
+    <section class="showcase-section" style="padding: 80px 0;">
+        <h2 class="section-heading">Local Marketplace</h2>
+        <p class="section-subheading">Support independent local creators and discover unique products in your neighborhood.</p>
+        <div class="cards-grid">
+            <div class="product-card">
+                <img src="assets/images/Granola Cups.png" alt="Granola Cups" class="product-image">
+                <div class="product-info">
+                    <h3>Granola Cups</h3>
+                    <p class="product-description">Healthy, handmade granola cups with fresh yogurt and berries.</p>
+                    <div class="product-footer">
+                        <p class="product-price">$12.00 <span>/ box</span></p>
+                        <a href="https://wa.me/6587612979?text=Hi,%20I'm%20interested%20in%20your%20granola%20cups!" 
+                           class="whatsapp-btn">
+                           <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="assets/images/Peanut Butter Granola.png" alt="Peanut Butter Granola" class="product-image">
+                <div class="product-info">
+                    <h3>Peanut Butter Granola</h3>
+                    <p class="product-description">Crunchy, protein-rich granola with honey and peanut butter.</p>
+                    <div class="product-footer">
+                        <p class="product-price">$15.00 <span>/ pack</span></p>
+                        <a href="https://wa.me/6587612979?text=Hi,%20I'm%20interested%20in%20your%20peanut%20butter%20granola!" 
+                           class="whatsapp-btn">
+                           <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div style="height: 200px; background: #eee; display: grid; place-items: center; font-size: 3rem;">🧁</div>
+                <div class="product-info">
+                    <h3>Artisan Cupcakes</h3>
+                    <p class="product-description">Organic, hand-crafted cupcakes for your next gathering.</p>
+                    <div class="product-footer">
+                        <p class="product-price">Ask for Charges</p>
+                        <a href="https://wa.me/6587612979?text=Hi,%20I'm%20interested%20in%20your%20cupcakes!" 
+                           class="whatsapp-btn">
+                           <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="products.html" class="btn btn-outline">Explore Full Marketplace</a>
+        </div>
+    </section>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    <!-- Join Waitlist -->
+    <section id="waitlist" class="form-section">
+        <div class="glass-form-container">
+            <h2>Join the Reciprocity Movement</h2>
+            <p>Be the first to build on Ayni Social. Join our waitlist for early access to the platform.</p>
+            
+            <form action="https://formspree.io/f/your-form-id" method="POST" class="interactive-form">
+                <input type="text" name="_honey" style="display:none">
+                <input type="hidden" name="_next" value="https://ayni.sg/index.html?status=success">
+                
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="interest" placeholder="What will you offer the community? (e.g., Coding, Gardening, Mentorship...)"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Join Waitlist</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- WhatsApp CTA -->
+    <section class="whatsapp-cta">
+        <h2>Start a Conversation</h2>
+        <p>Want to spin up a specific community or project? Talk to us directly.</p>
+        <a href="https://wa.me/6587612979?text=Hi%20Ayni%20Social,%20I'd%20like%20to%20discuss%20a%20community%20idea." 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="whatsapp-btn">
+           💬 Chat on WhatsApp
+        </a>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Ayni Social. Built on the principles of reciprocity and mutual aid.</p>
+    </footer>
+
+    <script src="assets/script.js"></script>
 </body>
 </html>

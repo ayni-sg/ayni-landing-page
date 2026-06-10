@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share a Skill | Ayni Social</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <a href="index.html" class="logo">Ayni <span>Social</span></a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="groups.html">Communities</a>
+            <a href="skills.html">Skills</a>
+            <a href="projects.html">Projects</a>
+            <a href="products.html">Marketplace</a>
+        </nav>
+    </header>
+
+    <main class="form-page-container">
+        <div class="glass-form-container">
+            <h1>Share a Skill</h1>
+            <p>Every profile on Ayni starts with: "What can I offer?" and "What do I need?"</p>
+            
+            <form action="https://formspree.io/f/your-form-id" method="POST" class="interactive-form">
+                <div class="form-group">
+                    <label for="offer">Skill(s) I Offer</label>
+                    <input type="text" id="offer" name="offer" placeholder="e.g., React Development, Urban Gardening" required>
+                </div>
+                <div class="form-group">
+                    <label for="need">Skill(s) I Need</label>
+                    <input type="text" id="need" name="need" placeholder="e.g., Accounting, Piano Lessons" required>
+                </div>
+                <div class="form-group">
+                    <label for="context">How do you want to collaborate?</label>
+                    <textarea id="context" name="context" rows="4" placeholder="Describe your experience level and how you prefer to teach or learn (e.g., 1-on-1, workshops, project-based)." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Post Skill Profile</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Ayni Social. Built on the principles of reciprocity and mutual aid.</p>
+    </footer>
+</body>
+</html>
