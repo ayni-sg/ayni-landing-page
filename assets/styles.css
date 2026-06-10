@@ -427,6 +427,30 @@ footer {
     .whatsapp-cta { padding: 30px 20px; }
 }
 
+/* Inline socials block above footer */
+.socials { text-align: center; padding: 18px 5%; }
+.socials-inner { display: inline-flex; gap: 12px; align-items: center; }
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 12px;
+    background: #fff;
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 0 6px 18px rgba(16,24,40,0.04);
+}
+.social-link.youtube { border-color: #FF0000; }
+.social-link i { font-size: 1.1rem; color: #FF0000; }
+
+@media (max-width: 480px) {
+    .socials { padding: 12px 4%; }
+    .social-link span { display: none; }
+}
+
 /* Mobile */
 @media(max-width: 768px) {
     .menu-toggle {
