@@ -14,20 +14,8 @@
     <!-- Design System -->
     <link rel="stylesheet" href="assets/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "Ayni Social",
-      "url": "https://ayni.sg",
-      "description": "A social network built on reciprocity and mutual aid.",
-      "applicationCategory": "SocialNetworking Application"
-    }
-    </script>
-</head>
-<body>
+    </head>
+    <body>
 
     <header class="navbar">
         <a href="index.html" class="logo">Ayni <span>Social</span></a>
@@ -44,7 +32,7 @@
             <a href="projects.html">Projects</a>
             <a href="products.html">Marketplace</a>
             <a href="about.html">About</a>
-            <a href="#waitlist" class="btn btn-secondary">Join Waitlist</a>
+            <a href="#waitlist" class="btn btn-secondary open-waitlist">Join Waitlist</a>
         </nav>
     </header>
 
@@ -61,111 +49,36 @@
         </div>
     </section>
 
-    <!-- Stats Showcase -->
-    <section class="stats-container">
-        <div class="stat-card"><h3>100%</h3><p>Contribution-Led</p></div>
-        <div class="stat-card"><h3>SG</h3><p>Neighborhood First</p></div>
-        <div class="stat-card"><h3>AI</h3><p>Discoverable Needs</p></div>
-    </section>
+    <!-- Compact Explore Section (replaces large content areas) -->
+    <section class="compact-explore" style="padding: 60px 0;">
+        <h2 class="section-heading">Explore Ayni</h2>
+        <p class="section-subheading">Quick access to the main sections — tap a card to open the page from the menu.</p>
 
-    <!-- Section 2: How Ayni Works -->
-    <section class="features-section" aria-labelledby="how-it-works">
-        <h2 id="how-it-works" class="section-heading">How Ayni Works</h2>
-        <p class="section-subheading">Ayni Social replaces followers and algorithms with contribution and collective growth.</p>
-        
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="icon">✨</div>
-                <h3>Share</h3>
-                <p>Offer skills, knowledge, and resources. Reputation is built through helping, not popularity.</p>
-            </div>
-            <div class="feature-card">
-                <div class="icon">🤝</div>
-                <h3>Connect</h3>
-                <p>Find people who need what you offer or discover groups organizing around real local needs.</p>
-            </div>
-            <div class="feature-card">
-                <div class="icon">📈</div>
-                <h3>Grow</h3>
-                <p>Build collaborative projects, solve problems, and create value together through mutual aid.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 5: Project Collaboration -->
-    <section class="showcase-section" style="padding-bottom: 80px;">
-        <h2 class="section-heading">Collaborative Projects</h2>
-        <p class="section-subheading">Join ventures where every member is a contributor, not just a consumer.</p>
-        <div class="cards-grid">
-            <div class="feature-card">
-                <h3>Neighborhood Solar Hub</h3>
-                <p>Collaborating on a community-owned solar installation for shared energy savings.</p>
-                <div style="margin-top: 20px; font-size: 0.9rem;"><strong>Needs:</strong> Electricians, Legal advice</div>
-            </div>
-            <div class="feature-card">
-                <h3>Open Source Education</h3>
-                <p>Building a free, local repository of technical workshops taught by neighborhood experts.</p>
-                <div style="margin-top: 20px; font-size: 0.9rem;"><strong>Needs:</strong> Writers, Mentors</div>
-            </div>
-            <div class="feature-card">
-                <h3>Mutual Aid Food Box</h3>
-                <p>A logistics project to distribute surplus groceries from local shops to those in need.</p>
-                <div style="margin-top: 20px; font-size: 0.9rem;"><strong>Needs:</strong> Drivers, Organizers</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 3: Community Showcase -->
-    <section class="showcase-section">
-        <h2 class="section-heading">Community Showcase</h2>
-        <p class="section-subheading">Discover vibrant groups organizing around shared interests and local needs.</p>
-        <div class="cards-grid">
+        <div class="cards-grid" style="max-width:1000px; margin: 40px auto; gap: 24px;">
             <a href="groups.html" class="interactive-card">
-                <h3>Singapore Parents Circle &rarr;</h3>
-                <p>Reciprocity-based support for modern parenting, resource sharing, and neighborhood playgroups.</p>
+                <h3>Communities</h3>
+                <p>Find and join local groups organising around shared interests and needs.</p>
             </a>
-            <a href="groups.html" class="interactive-card">
-                <h3>AI Builders Guild &rarr;</h3>
-                <p>A community for developers to collaborate on open-source AI projects and share technical mentorship.</p>
+            <a href="skills.html" class="interactive-card">
+                <h3>Skills</h3>
+                <p>Offer or request skills and mentorship within your neighbourhood.</p>
             </a>
-            <a href="groups.html" class="interactive-card">
-                <h3>Urban Harvesters &rarr;</h3>
-                <p>Hyper-local gardening groups sharing tools, seeds, and the fruits of collective labor.</p>
+            <a href="projects.html" class="interactive-card">
+                <h3>Projects</h3>
+                <p>Collaborative ventures where members contribute time and expertise.</p>
             </a>
-        </div>
-    </section>
-
-    <!-- Section 4: Skill Exchange -->
-    <section class="showcase-section" style="background: rgba(47, 191, 113, 0.03); padding: 80px 0;">
-        <h2 class="section-heading">Skill Marketplace</h2>
-        <p class="section-subheading">Exchange what you know for what you need. No currency required, just reciprocity.</p>
-        <div class="cards-grid">
-            <div class="feature-card">
-                <h3>Teach Python</h3>
-                <p>I can help you build your first automation script or web scraper.</p>
-                <p style="margin-top: 20px; font-weight: 700; color: var(--secondary);">Offered by Sarah K.</p>
-            </div>
-            <div class="feature-card">
-                <h3>Learn Mandarin</h3>
-                <p>Looking for a conversation partner to improve my business Mandarin.</p>
-                <p style="margin-top: 20px; font-weight: 700; color: var(--accent);">Needed by David L.</p>
-            </div>
-            <div class="feature-card">
-                <h3>UX Mentorship</h3>
-                <p>Offering portfolio reviews and career advice for aspiring designers.</p>
-                <p style="margin-top: 20px; font-weight: 700; color: var(--secondary);">Offered by Marc V.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 6: Local Marketplace -->
-    <section class="showcase-section" style="padding: 80px 0;">
-        <h2 class="section-heading">Local Marketplace</h2>
-        <p class="section-subheading">Support independent local creators and discover unique products in your neighborhood.</p>
-        
-        </div>
-        <div style="text-align: center; margin-top: 40px;">
-            <a href="products.html" class="btn btn-outline">Explore Full Marketplace</a>
+            <a href="products.html" class="interactive-card">
+                <h3>Marketplace</h3>
+                <p>Support local makers and discover neighbourhood products.</p>
+            </a>
+            <a href="about.html" class="interactive-card">
+                <h3>About</h3>
+                <p>Learn more about Ayni's values, principles and how to get involved.</p>
+            </a>
+            <a href="#waitlist" class="interactive-card open-waitlist">
+                <h3>Join Waitlist</h3>
+                <p>Sign up for early access and help shape the platform.</p>
+            </a>
         </div>
     </section>
 
@@ -218,6 +131,23 @@
             </a>
         </div>
     </section>
+
+    <!-- Modal: Waitlist -->
+    <div class="modal-overlay" id="waitlist-modal" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button class="modal-close" aria-label="Close">&times;</button>
+            <h2 id="modal-title">Join the Reciprocity Movement</h2>
+            <p>Sign up for early access and help shape the platform.</p>
+            <form action="https://formspree.io/f/mqeoppnr" method="POST" class="interactive-form modal-form">
+                <input type="text" name="_honey" style="display:none">
+                <input type="hidden" name="_next" value="https://ayni.sg/index.html?status=success">
+                <div class="form-group"><input type="text" name="name" placeholder="Your Name" required></div>
+                <div class="form-group"><input type="email" name="email" placeholder="Email Address" required></div>
+                <div class="form-group"><textarea name="interest" placeholder="What will you offer the community? (e.g., Coding, Gardening, Mentorship...)" ></textarea></div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Join Waitlist</button>
+            </form>
+        </div>
+    </div>
 
     <script src="assets/script.js"></script>
     <!-- Floating Social CTA -->

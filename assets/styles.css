@@ -33,6 +33,52 @@
     --shadow-md: 0 10px 30px rgba(46, 58, 140, 0.08);
 }
 
+/* Hero subtle animated background */
+.hero {
+    position: relative;
+    overflow: visible;
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: -20%;
+    transform: translateX(-50%);
+    width: 1200px;
+    height: 600px;
+    background: radial-gradient(ellipse at center, rgba(47,191,113,0.12) 0%, rgba(46,58,140,0.06) 35%, transparent 60%);
+    filter: blur(40px);
+    z-index: 0;
+    pointer-events: none;
+    animation: floatSlow 8s ease-in-out infinite;
+}
+.hero > * { position: relative; z-index: 1; }
+
+@keyframes floatSlow {
+    0% { transform: translateX(-52%) translateY(0); }
+    50% { transform: translateX(-48%) translateY(8px); }
+    100% { transform: translateX(-52%) translateY(0); }
+}
+
+/* Reveal on scroll */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* Modal styles */
+.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.45); display: none; align-items: center; justify-content: center; z-index: 2000; padding: 20px; }
+.modal-overlay.open { display: flex; }
+.modal-content { background: var(--bg-surface); max-width: 600px; width: 100%; border-radius: var(--radius-lg); padding: 28px; box-shadow: var(--shadow-md); position: relative; }
+.modal-close { position: absolute; right: 12px; top: 12px; background: transparent; border: none; font-size: 1.6rem; cursor: pointer; color: var(--text-secondary); }
+.modal-form .form-group { margin-bottom: 16px; }
+
+/* Small screens modal tweaks */
+@media (max-width: 480px) {
+    .modal-content { padding: 18px; border-radius: 12px; }
+}
+
+/* Slight tilt effect container to smooth interactions */
+.tilt { transform-style: preserve-3d; will-change: transform; }
+
 * {
     box-sizing: border-box;
     margin: 0;
