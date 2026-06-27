@@ -1,10 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create a Community | Ayni Social</title>
-    <link rel="stylesheet" href="assets/styles.css">
+    <title>Communities | Ayni Social</title>
+    <meta name="description" content="Join local neighborhood hubs on Ayni Social. Connect, collaborate, and build the future of your community together.">
+    
+    <!-- AI/Search Agent Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Ayni Social Communities",
+      "description": "List of active neighborhood groups and collectives on Ayni Social."
+    }
+    </script>
+    
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] }, colors: { ayni: { 50: '#fdfbf7', 100: '#f4ede4', 500: '#0D6370', 600: '#0a4f5a', accent: '#ffd57a', dark: '#1a1a1a', text: '#4a4a4a' } } } } }
+    </script>
+    <style>
+        body { background-color: #fdfbf7; color: #4a4a4a; }
+        .glass-panel { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.8); }
+        .gradient-text { background: linear-gradient(135deg, #0D6370, #2a8a99); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        #menu-checkbox { display: none; }
+        .menu-toggle { display: none; flex-direction: column; gap: 6px; cursor: pointer; }
+        .menu-toggle span { display: block; width: 28px; height: 2px; background-color: #1a1a1a; transition: 0.3s; }
+        @media (max-width: 768px) { .menu-toggle { display: flex; } .nav-links { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(253, 251, 247, 0.98); flex-direction: column; align-items: center; justify-content: center; gap: 2rem; transform: translateY(-100%); transition: transform 0.4s; z-index: 90; } #menu-checkbox:checked ~ .nav-links { transform: translateY(0); } }
+    </style>
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RSR2XXB2DZ"></script>
@@ -16,58 +41,50 @@
   gtag('config', 'G-RSR2XXB2DZ');
 </script>
 <body>
-    <header class="navbar">
-        <a href="index.html" class="logo">Ayni <span>Social</span></a>
-        <input type="checkbox" id="menu-checkbox">
-        <label for="menu-checkbox" class="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </label>
-        <nav class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="groups.html" class="active">Communities</a>
-            <a href="skills.html">Skills</a>
-            <a href="projects.html">Projects</a>
-            <a href="products.html">Marketplace</a>
-            <a href="about.html">About</a>
-        </nav>
+    <header class="fixed w-full top-0 z-50 glass-panel border-b border-white/40">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-ayni-dark font-serif">Ayni <span class="text-ayni-500 font-sans font-medium text-xl">Social</span></a>
+            <input type="checkbox" id="menu-checkbox">
+            <label for="menu-checkbox" class="menu-toggle"><span></span><span></span><span></span></label>
+            <nav class="nav-links hidden md:flex gap-8 text-sm font-medium text-gray-600">
+                <a href="index.html" class="hover:text-ayni-500">Home</a>
+                <a href="groups.html" class="text-ayni-500 border-b-2 border-ayni-500 pb-1">Communities</a>
+                <a href="marketplace.html" class="hover:text-ayni-500">Marketplace</a>
+                <a href="skills.html" class="hover:text-ayni-500">Skills</a>
+                <a href="about.html" class="hover:text-ayni-500">About</a>
+            </nav>
+        </div>
     </header>
 
-    <main class="form-page-container">
-        <div class="glass-form-container">
-            <h1>Create a Community</h1>
-            <p>Define the purpose and values of your new community. Ayni Social is built on collective ownership and mutual aid.</p>
-            
-            <form action="https://formspree.io/f/mqeoppnr" method="POST" class="interactive-form">
-                <div class="form-group">
-                    <label for="group_name">Community Name</label>
-                    <input type="text" id="group_name" name="group_name" placeholder="e.g., Tiong Bahru Resource Sharing" required>
-                </div>
-                <div class="form-group">
-                    <label for="location">Primary Location</label>
-                    <input type="text" id="location" name="location" placeholder="e.g., Central Singapore / Neighborhood" required>
-                </div>
-                <div class="form-group">
-                    <label for="category">Community Type</label>
-                    <select id="category" name="category">
-                        <option value="neighborhood">Neighborhood / Local Hub</option>
-                        <option value="guild">Professional Guild / Skill Group</option>
-                        <option value="interest">Interest / Hobby Circle</option>
-                        <option value="aid">Mutual Aid / Support Network</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="vision">What is your mission?</label>
-                    <textarea id="vision" name="vision" rows="4" placeholder="How will this community practice reciprocity? What value will it create for members?" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Launch Community Idea</button>
-            </form>
+    <main class="pt-32 pb-20 px-6 max-w-7xl mx-auto">
+        <section class="text-center mb-16">
+            <h1 class="text-5xl font-serif text-ayni-dark mb-6">Local Communities</h1>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">Discover neighborhoods, passion projects, and grassroots movements. Find your tribe here.</p>
+        </section>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Group 1 -->
+            <div class="glass-panel p-6 rounded-3xl border border-gray-100 hover:shadow-xl transition-all">
+                <div class="h-40 bg-ayni-100 rounded-2xl mb-6"></div>
+                <h3 class="text-2xl font-bold mb-2">Melville Neighbors</h3>
+                <p class="text-gray-600 mb-6">A space for residents of the Melville block to share resources, organize block parties, and stay connected.</p>
+                <button class="w-full py-3 bg-ayni-dark text-white rounded-xl hover:bg-black transition-colors">Join Group</button>
+            </div>
+            <!-- Group 2 -->
+            <div class="glass-panel p-6 rounded-3xl border border-gray-100 hover:shadow-xl transition-all">
+                <div class="h-40 bg-ayni-100 rounded-2xl mb-6"></div>
+                <h3 class="text-2xl font-bold mb-2">Urban Gardening Collective</h3>
+                <p class="text-gray-600 mb-6">Sharing seeds, tips, and harvests from our balcony gardens. Let's grow green together in the heart of the city.</p>
+                <button class="w-full py-3 bg-ayni-dark text-white rounded-xl hover:bg-black transition-colors">Join Group</button>
+            </div>
+            <!-- Group 3 -->
+            <div class="glass-panel p-6 rounded-3xl border border-gray-100 hover:shadow-xl transition-all">
+                <div class="h-40 bg-ayni-100 rounded-2xl mb-6"></div>
+                <h3 class="text-2xl font-bold mb-2">Ayni Study Circle</h3>
+                <p class="text-gray-600 mb-6">A weekly gathering to share knowledge on sustainability, local history, and communal practices.</p>
+                <button class="w-full py-3 bg-ayni-dark text-white rounded-xl hover:bg-black transition-colors">Join Group</button>
+            </div>
         </div>
     </main>
-
-    <footer>
-        <p>&copy; 2026 Ayni Social. Built on the principles of reciprocity and mutual aid.</p>
-    </footer>
 </body>
 </html>

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayni Marketplace | The Kampung Spirit</title>
+    <meta name="description" content="Support your neighbors on Ayni Social. Discover handmade foods, local services, and shared resources in your community.">
+    
+    <!-- Open Graph / SEO -->
+    <meta property="og:title" content="Ayni Marketplace | Support Local">
+    <meta property="og:description" content="Discover handmade foods, local services, and shared resources right in your neighborhood.">
+    <meta property="og:type" content="website">
+    
+    <!-- AI / Search Agent Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Ayni Marketplace Offerings",
+      "description": "Handmade foods, local services, and shared resources from Ayni community members."
+    }
+    </script>
+
+    <!-- Fonts: Inter for modern readability, Playfair Display for premium brand feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        ayni: {
+                            50: '#fdfbf7',
+                            100: '#f4ede4',
+                            500: '#0D6370', // Brand primary from AlphaPulse/Social
+                            600: '#0a4f5a',
+                            accent: '#ffd57a',
+                            dark: '#1a1a1a',
+                            text: '#4a4a4a'
+                        }
+                    },
+                    boxShadow: {
+                        'glass': '0 8px 32px 0 rgba(13, 99, 112, 0.08)',
+                        'card': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for specific elements (Glassmorphism & Nav) -->
+    <style>
+        body {
+            background-color: theme('colors.ayni.50');
+            color: theme('colors.ayni.text');
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Nav Toggle Mechanics */
+        #menu-checkbox { display: none; }
+        .menu-toggle { display: none; flex-direction: column; gap: 6px; cursor: pointer; z-index: 100; }
+        .menu-toggle span { display: block; width: 28px; height: 2px; background-color: theme('colors.ayni.dark'); transition: 0.3s; }
+        
+        @media (max-width: 768px) {
+            .menu-toggle { display: flex; }
+            .nav-links {
+                position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+                background: rgba(253, 251, 247, 0.98); backdrop-filter: blur(10px);
+                flex-direction: column; align-items: center; justify-content: center;
+                gap: 2rem; transform: translateY(-100%); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                z-index: 90;
+            }
+            #menu-checkbox:checked ~ .nav-links { transform: translateY(0); }
+            #menu-checkbox:checked ~ .menu-toggle span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+            #menu-checkbox:checked ~ .menu-toggle span:nth-child(2) { opacity: 0; }
+            #menu-checkbox:checked ~ .menu-toggle span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+        }
+
+        /* Utilities */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: theme('boxShadow.glass');
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, theme('colors.ayni.500'), #2a8a99);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .product-image-wrapper {
+            overflow: hidden;
+        }
+        .product-image-wrapper img {
+            transition: transform 0.5s ease;
+        }
+        .product-card:hover .product-image-wrapper img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RSR2XXB2DZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RSR2XXB2DZ');
+</script>
+<body>
+
+    <header class="fixed w-full top-0 z-50 glass-panel border-b border-white/40 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-ayni-dark font-serif tracking-tight">
+                Ayni <span class="text-ayni-500 font-sans font-medium text-xl">Social</span>
+            </a>
+            
+            <input type="checkbox" id="menu-checkbox">
+            <label for="menu-checkbox" class="menu-toggle">
+                <span></span><span></span><span></span>
+            </label>
+            
+            <nav class="nav-links flex gap-8 text-sm font-medium text-gray-600">
+                <a href="index.html" class="hover:text-ayni-500 transition-colors">Home</a>
+                <a href="groups.html" class="hover:text-ayni-500 transition-colors">Communities</a>
+                <a href="skills.html" class="hover:text-ayni-500 transition-colors">Skills</a>
+                <a href="marketplace.html" class="text-ayni-500 font-semibold border-b-2 border-ayni-500 pb-1">Marketplace</a>
+                <a href="about.html" class="hover:text-ayni-500 transition-colors">About</a>
+                <a href="#list-item" class="md:hidden bg-ayni-500 text-white px-6 py-2 rounded-full">List an Item</a>
+            </nav>
+
+            <a href="#list-item" class="hidden md:inline-flex bg-ayni-500 hover:bg-ayni-600 text-white px-6 py-2.5 rounded-full text-sm font-medium transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                List an Item
+            </a>
+        </div>
+    </header>
+
+    <main class="pt-28 pb-20">
+        <section class="max-w-7xl mx-auto px-6 py-12 md:py-20 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-ayni-100 text-ayni-600 text-sm font-semibold mb-8">
+                <i class="fas fa-leaf"></i> The Kampung Spirit
+            </div>
+            <h1 class="text-4xl md:text-6xl font-serif text-ayni-dark mb-6 leading-tight max-w-4xl mx-auto">
+                Support your neighbors.<br>
+                <span class="gradient-text">Taste the local difference.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed">
+                The Ayni Marketplace is a curated space celebrating the home bakers, craftsmen, and skill-sharers right in your neighborhood. Real people, real reciprocity.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#offerings" class="bg-ayni-dark text-white px-8 py-3.5 rounded-full font-medium hover:bg-black transition-colors shadow-lg">
+                    Explore Offerings
+                </a>
+                <a href="#how-it-works" class="bg-white border-2 border-gray-200 text-ayni-dark px-8 py-3.5 rounded-full font-medium hover:border-ayni-500 transition-colors">
+                    How it Works
+                </a>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="max-w-7xl mx-auto px-6 py-16">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-panel p-8 rounded-2xl text-center">
+                    <div class="w-16 h-16 bg-ayni-100 text-ayni-500 rounded-full flex items-center justify-center text-2xl mx-auto mb-6">
+                        <i class="fa-solid fa-handshake-angle"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-ayni-dark mb-3">Direct & Personal</h3>
+                    <p class="text-gray-600 leading-relaxed">No middlemen, no hidden platform fees. Connect directly with the maker via WhatsApp to place your order.</p>
+                </div>
+                <div class="glass-panel p-8 rounded-2xl text-center relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-ayni-accent/20 rounded-bl-full -z-10"></div>
+                    <div class="w-16 h-16 bg-ayni-100 text-ayni-500 rounded-full flex items-center justify-center text-2xl mx-auto mb-6">
+                        <i class="fa-solid fa-house-chimney-window"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-ayni-dark mb-3">Hyper-Local</h3>
+                    <p class="text-gray-600 leading-relaxed">Discover foods and services crafted just blocks away from you. Strengthen your immediate neighborhood economy.</p>
+                </div>
+                <div class="glass-panel p-8 rounded-2xl text-center">
+                    <div class="w-16 h-16 bg-ayni-100 text-ayni-500 rounded-full flex items-center justify-center text-2xl mx-auto mb-6">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-ayni-dark mb-3">Built on Reciprocity</h3>
+                    <p class="text-gray-600 leading-relaxed">Every purchase is an investment in your community. Today you buy their cake, tomorrow they might need your skills.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="offerings" class="max-w-7xl mx-auto px-6 py-16">
+            <div class="flex justify-between items-end mb-10">
+                <div>
+                    <h2 class="text-3xl font-serif text-ayni-dark mb-2">Featured Local Offerings</h2>
+                    <p class="text-gray-500">Fresh batches and shared resources from this week.</p>
+                </div>
+                <div class="hidden md:flex gap-2">
+                    <button class="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-medium hover:border-ayni-500 transition-colors">All</button>
+                    <button class="px-4 py-2 bg-transparent text-gray-500 rounded-full text-sm font-medium hover:text-ayni-500 transition-colors">Food & Bakes</button>
+                    <button class="px-4 py-2 bg-transparent text-gray-500 rounded-full text-sm font-medium hover:text-ayni-500 transition-colors">Services</button>
+                </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Product 1: Nirali's Cake -->
+                <article class="product-card bg-white rounded-2xl shadow-card overflow-hidden flex flex-col border border-gray-100 group relative">
+                    <span class="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur-sm text-ayni-600 text-xs font-bold px-3 py-1 rounded-full shadow-sm">
+                        🌿 Fresh Batch
+                    </span>
+                    <div class="product-image-wrapper h-56 bg-gray-100 relative">
+                        <img src="assets/cake.png" alt="Artisanal Deep Cocoa Cake" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center gap-2 mb-3">
+                            <img src="https://placehold.co/32x32/0D6370/ffffff?text=N" alt="Maker Avatar" class="w-6 h-6 rounded-full">
+                            <span class="text-xs text-gray-500 font-medium">By Nirali • Melville</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-ayni-dark mb-2">Artisanal Deep Cocoa Cake</h3>
+                        <p class="text-sm text-gray-600 mb-6 flex-grow">Rich, decadent artisanal deep cocoa cake topped with gold leaf and roasted hazelnuts. Perfect for neighborhood celebrations.</p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <div class="flex flex-col">
+                                <span class="text-xl font-bold text-ayni-dark">$35.00</span>
+                                <span class="text-xs text-gray-400">/ whole cake</span>
+                            </div>
+                            <a href="https://wa.me/6587612979?text=Hi%20Nirali,%20I'm%20interested%20in%20your%20Artisanal%20Deep%20Cocoa%20Cake!%20Can%20I%20place%20an%20order?" class="bg-green-500 hover:bg-green-600 text-white w-10 h-10 rounded-full flex items-center justify-center transition-transform hover:scale-110 shadow-md" aria-label="Order via WhatsApp">
+                                <i class="fab fa-whatsapp text-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 2: Nirali's Minion Cupcakes -->
+                <article class="product-card bg-white rounded-2xl shadow-card overflow-hidden flex flex-col border border-gray-100 group relative">
+                    <div class="product-image-wrapper h-56 bg-gray-100 relative">
+                        <img src="assets/minion.png" alt="Minion Cupcakes" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center gap-2 mb-3">
+                            <img src="https://placehold.co/32x32/0D6370/ffffff?text=N" alt="Maker Avatar" class="w-6 h-6 rounded-full">
+                            <span class="text-xs text-gray-500 font-medium">By Nirali • Melville</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-ayni-dark mb-2">Minion Cupcakes</h3>
+                        <p class="text-sm text-gray-600 mb-6 flex-grow">Fun, handcrafted Minion-themed cupcakes! Made with love, featuring adorable fondant details. Kids absolutely love them.</p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <div class="flex flex-col">
+                                <span class="text-xl font-bold text-ayni-dark">$18.00</span>
+                                <span class="text-xs text-gray-400">/ box of 4</span>
+                            </div>
+                            <a href="https://wa.me/6587612979?text=Hi%20Nirali,%20I'd%20love%20to%20buy%20a%20box%20of%20Minion%20Cupcakes!%20How%20do%20I%20pay?" class="bg-green-500 hover:bg-green-600 text-white w-10 h-10 rounded-full flex items-center justify-center transition-transform hover:scale-110 shadow-md" aria-label="Order via WhatsApp">
+                                <i class="fab fa-whatsapp text-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 3: Nirali's Yogurt Bites -->
+                <article class="product-card bg-white rounded-2xl shadow-card overflow-hidden flex flex-col border border-gray-100 group relative">
+                    <div class="product-image-wrapper h-56 bg-gray-100 relative">
+                        <img src="assets/yogurt.png" alt="Yogurt Bites" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center gap-2 mb-3">
+                            <img src="https://placehold.co/32x32/0D6370/ffffff?text=N" alt="Maker Avatar" class="w-6 h-6 rounded-full">
+                            <span class="text-xs text-gray-500 font-medium">By Nirali • Melville</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-ayni-dark mb-2">Yogurt Bites</h3>
+                        <p class="text-sm text-gray-600 mb-6 flex-grow">Coffee, berries, dark chocolate, and Greek yogurt goodness! High in protein, perfectly frozen, with no refined sugar.</p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <div class="flex flex-col">
+                                <span class="text-xl font-bold text-ayni-dark">$12.00</span>
+                                <span class="text-xs text-gray-400">/ pack</span>
+                            </div>
+                            <a href="https://wa.me/6587612979?text=Hi%20Nirali,%20I'm%20interested%20in%20your%20Yogurt%20Bites!%20Are%20they%20available?" class="bg-green-500 hover:bg-green-600 text-white w-10 h-10 rounded-full flex items-center justify-center transition-transform hover:scale-110 shadow-md" aria-label="Order via WhatsApp">
+                                <i class="fab fa-whatsapp text-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-6 py-16">
+            <div class="bg-ayni-dark rounded-3xl overflow-hidden flex flex-col md:flex-row text-white shadow-2xl relative">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-ayni-500 rounded-full blur-[100px] opacity-50 pointer-events-none"></div>
+                <div class="md:w-1/2 p-10 md:p-16 flex flex-col justify-center z-10">
+                    <span class="text-ayni-accent font-bold text-sm tracking-widest uppercase mb-4">Meet The Neighbors</span>
+                    <h2 class="text-3xl md:text-4xl font-serif mb-6 leading-tight">"Baking is how I introduce myself to the neighborhood."</h2>
+                    <p class="text-gray-300 mb-8 leading-relaxed">
+                        Nirali moved to Melville recently. Instead of knocking on doors empty-handed, she started sharing her artisanal cocoa cakes and yogurt bites at the Friday Ayni Circle. Now, her bakes are a staple at local gatherings, and half the building knows her name.
+                    </p>
+                    <div>
+                        <a href="#list-item" class="inline-flex items-center gap-2 text-ayni-accent hover:text-white font-medium transition-colors">
+                            Start sharing your skills <i class="fas fa-arrow-right text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 min-h-[300px] md:min-h-full bg-gray-800 relative">
+                    <!-- Placeholder representing Nirali baking or connecting -->
+                    <img src="https://placehold.co/800x800/2a8a99/ffffff?text=Neighbor+Baking" alt="Neighbor baking" class="absolute inset-0 w-full h-full object-cover opacity-80">
+                </div>
+            </div>
+        </section>
+
+        <section id="list-item" class="max-w-3xl mx-auto px-6 py-16">
+            <div class="glass-panel p-8 md:p-12 rounded-3xl shadow-xl">
+                <div class="text-center mb-10">
+                    <div class="inline-block p-4 bg-white rounded-full shadow-sm mb-4">
+                        <i class="fa-solid fa-store text-2xl text-ayni-500"></i>
+                    </div>
+                    <h2 class="text-3xl font-serif text-ayni-dark mb-4">Bring Your Offering to Ayni</h2>
+                    <p class="text-gray-600">Exchange products, services, or list a shared resource (like a communal drill or ladder) for your community.</p>
+                </div>
+                
+                <!-- Formspree Endpoint strictly maintained as requested -->
+                <form action="https://formspree.io/f/mqeoppnr" method="POST" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label for="item_name" class="block text-sm font-semibold text-gray-700">Resource / Product Name</label>
+                            <input type="text" id="item_name" name="item_name" placeholder="e.g., Artisanal Sourdough Loaf" required
+                                class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-ayni-500 focus:border-ayni-500 transition-all outline-none bg-white/50 backdrop-blur-sm">
+                        </div>
+                        <div class="space-y-2">
+                            <label for="type" class="block text-sm font-semibold text-gray-700">Listing Type</label>
+                            <select id="type" name="type" 
+                                class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-ayni-500 focus:border-ayni-500 transition-all outline-none bg-white/50 backdrop-blur-sm appearance-none">
+                                <option value="product">Handmade Product</option>
+                                <option value="service">Local Service / Skill</option>
+                                <option value="share">Shared Resource (Free)</option>
+                                <option value="trade">Trade / Barter</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-2">
+                        <label for="price" class="block text-sm font-semibold text-gray-700">Price / Exchange Terms</label>
+                        <input type="text" id="price" name="price" placeholder="e.g., $10 per loaf, or Trade for local honey" required
+                            class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-ayni-500 focus:border-ayni-500 transition-all outline-none bg-white/50 backdrop-blur-sm">
+                    </div>
+
+                    <div class="space-y-2">
+                        <label for="description" class="block text-sm font-semibold text-gray-700">Details & Story</label>
+                        <textarea id="description" name="description" rows="4" placeholder="Describe the item, ingredients, and a bit about why you make it. For resources, list condition and rules of use." required
+                            class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-ayni-500 focus:border-ayni-500 transition-all outline-none bg-white/50 backdrop-blur-sm resize-none"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-ayni-500 hover:bg-ayni-600 text-white font-semibold py-4 rounded-xl transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                        Submit Listing to Marketplace
+                    </button>
+                    <p class="text-xs text-center text-gray-400 mt-4">
+                        All listings are reviewed to ensure they align with Ayni's local reciprocity guidelines.
+                    </p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white border-t border-gray-200 py-12">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <a href="index.html" class="text-xl font-bold text-ayni-dark font-serif tracking-tight block mb-2">
+                    Ayni <span class="text-ayni-500 font-sans font-medium text-lg">Social</span>
+                </a>
+                <p class="text-sm text-gray-500 max-w-sm">&copy; 2026 Ayni Social. Built on the principles of reciprocity, mutual aid, and the kampung spirit.</p>
+            </div>
+            
+            <div class="flex gap-4">
+                <a href="https://wa.me/6587612979" target="_blank" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-ayni-500 hover:text-white transition-colors" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://www.instagram.com/ayni_sg/" target="_blank" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-ayni-500 hover:text-white transition-colors" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.youtube.com/@aynisg" target="_blank" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-ayni-500 hover:text-white transition-colors" aria-label="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

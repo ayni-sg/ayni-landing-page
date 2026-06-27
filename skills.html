@@ -1,10 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Share a Skill | Ayni Social</title>
-    <link rel="stylesheet" href="assets/styles.css">
+    <title>Skills Exchange | Ayni Social</title>
+    <meta name="description" content="Share your skills and find help from neighbors. Ayni Social's skills marketplace for mutual aid and growth.">
+    
+    <!-- AI/Search Agent Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Ayni Skill Offerings",
+      "description": "Skills and services offered by Ayni community members."
+    }
+    </script>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] }, colors: { ayni: { 50: '#fdfbf7', 100: '#f4ede4', 500: '#0D6370', 600: '#0a4f5a', accent: '#ffd57a', dark: '#1a1a1a', text: '#4a4a4a' } } } } }
+    </script>
+    <style>
+        body { background-color: #fdfbf7; color: #4a4a4a; }
+        .glass-panel { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.8); }
+        #menu-checkbox { display: none; }
+        .menu-toggle { display: none; flex-direction: column; gap: 6px; cursor: pointer; }
+        .menu-toggle span { display: block; width: 28px; height: 2px; background-color: #1a1a1a; transition: 0.3s; }
+        @media (max-width: 768px) { .menu-toggle { display: flex; } .nav-links { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(253, 251, 247, 0.98); flex-direction: column; align-items: center; justify-content: center; gap: 2rem; transform: translateY(-100%); transition: transform 0.4s; z-index: 90; } #menu-checkbox:checked ~ .nav-links { transform: translateY(0); } }
+    </style>
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RSR2XXB2DZ"></script>
@@ -16,49 +39,57 @@
   gtag('config', 'G-RSR2XXB2DZ');
 </script>
 <body>
-    <header class="navbar">
-        <a href="index.html" class="logo">Ayni <span>Social</span></a>
-        <input type="checkbox" id="menu-checkbox">
-        <label for="menu-checkbox" class="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </label>
-        <nav class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="groups.html">Communities</a>
-            <a href="skills.html" class="active">Skills</a>
-            <a href="projects.html">Projects</a>
-            <a href="products.html">Marketplace</a>
-            <a href="about.html">About</a>
-        </nav>
+    <header class="fixed w-full top-0 z-50 glass-panel border-b border-white/40">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-ayni-dark font-serif">Ayni <span class="text-ayni-500 font-sans font-medium text-xl">Social</span></a>
+            <input type="checkbox" id="menu-checkbox">
+            <label for="menu-checkbox" class="menu-toggle"><span></span><span></span><span></span></label>
+            <nav class="nav-links hidden md:flex gap-8 text-sm font-medium text-gray-600">
+                <a href="index.html" class="hover:text-ayni-500">Home</a>
+                <a href="groups.html" class="hover:text-ayni-500">Communities</a>
+                <a href="marketplace.html" class="hover:text-ayni-500">Marketplace</a>
+                <a href="skills.html" class="text-ayni-500 border-b-2 border-ayni-500 pb-1">Skills</a>
+                <a href="about.html" class="hover:text-ayni-500">About</a>
+            </nav>
+        </div>
     </header>
 
-    <main class="form-page-container">
-        <div class="glass-form-container">
-            <h1>Share a Skill</h1>
-            <p>Every profile on Ayni starts with: "What can I offer?" and "What do I need?"</p>
-            
-            <form action="https://formspree.io/f/mqeoppnr" method="POST" class="interactive-form">
-                <div class="form-group">
-                    <label for="offer">Skill(s) I Offer</label>
-                    <input type="text" id="offer" name="offer" placeholder="e.g., React Development, Urban Gardening" required>
-                </div>
-                <div class="form-group">
-                    <label for="need">Skill(s) I Need</label>
-                    <input type="text" id="need" name="need" placeholder="e.g., Accounting, Piano Lessons" required>
-                </div>
-                <div class="form-group">
-                    <label for="context">How do you want to collaborate?</label>
-                    <textarea id="context" name="context" rows="4" placeholder="Describe your experience level and how you prefer to teach or learn (e.g., 1-on-1, workshops, project-based)." required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Post Skill Profile</button>
-            </form>
+    <main class="pt-32 pb-20 px-6 max-w-7xl mx-auto">
+        <section class="text-center mb-16">
+            <h1 class="text-5xl font-serif text-ayni-dark mb-6">Skill Exchange</h1>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">Need help with tech? Need a lesson in baking? Find and share skills with your neighbors.</p>
+        </section>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Skill 1 -->
+            <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm">
+                <div class="w-12 h-12 bg-ayni-100 text-ayni-500 rounded-full flex items-center justify-center text-xl mb-4">💻</div>
+                <h3 class="text-xl font-bold mb-2">Tech Support</h3>
+                <p class="text-sm text-gray-600 mb-4">Helping seniors set up their devices and stay connected with families.</p>
+                <a href="#" class="text-ayni-500 font-medium">Request Help →</a>
+            </div>
+            <!-- Skill 2 -->
+            <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm">
+                <div class="w-12 h-12 bg-ayni-100 text-ayni-500 rounded-full flex items-center justify-center text-xl mb-4">🌱</div>
+                <h3 class="text-xl font-bold mb-2">Garden Care</h3>
+                <p class="text-sm text-gray-600 mb-4">Expert tips on urban gardening and balcony pest control.</p>
+                <a href="#" class="text-ayni-500 font-medium">Request Help →</a>
+            </div>
+            <!-- Skill 3 -->
+            <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm">
+                <div class="w-12 h-12 bg-ayni-100 text-ayni-500 rounded-full flex items-center justify-center text-xl mb-4">🍳</div>
+                <h3 class="text-xl font-bold mb-2">Home Cooking</h3>
+                <p class="text-sm text-gray-600 mb-4">Master the basics of local cuisines with 1-on-1 kitchen sessions.</p>
+                <a href="#" class="text-ayni-500 font-medium">Request Help →</a>
+            </div>
+            <!-- Skill 4 -->
+            <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm">
+                <div class="w-12 h-12 bg-ayni-100 text-ayni-500 rounded-full flex items-center justify-center text-xl mb-4">🔧</div>
+                <h3 class="text-xl font-bold mb-2">Minor Repairs</h3>
+                <p class="text-sm text-gray-600 mb-4">Help with furniture assembly, simple plumbing, or quick home fixes.</p>
+                <a href="#" class="text-ayni-500 font-medium">Request Help →</a>
+            </div>
         </div>
     </main>
-
-    <footer>
-        <p>&copy; 2026 Ayni Social. Built on the principles of reciprocity and mutual aid.</p>
-    </footer>
 </body>
 </html>

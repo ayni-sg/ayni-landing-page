@@ -1,20 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayni Social | Build Communities. Share Skills. Create Together.</title>
-    <meta name="description" content="A social platform built around reciprocity, collaboration, and collective growth. Join the Ayni movement today.">
-    
-    <!-- Open Graph / SEO -->
-    <meta property="og:title" content="Ayni Social | Build Communities. Share Skills. Create Together.">
-    <meta property="og:description" content="A social platform built around reciprocity, collaboration, and collective growth.">
-    <meta property="og:url" content="https://ayni.sg/">
+    <title>Ayni Social | The Kampung Spirit, Reimagined.</title>
+    <meta name="description" content="Ayni Social is a platform built around reciprocity, collaboration, and collective growth. Build community, share skills, and trade locally.">
+    <meta property="og:title" content="Ayni Social | The Kampung Spirit, Reimagined.">
+    <meta property="og:description" content="Build communities, share skills, and trade locally with Ayni Social.">
+    <meta property="og:type" content="website">
 
-    <!-- Design System -->
-    <link rel="stylesheet" href="assets/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    </head>
+    <!-- AI/Search Agent Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Ayni Social",
+      "url": "https://ayni.social/",
+      "description": "A platform built around reciprocity, collaboration, and collective growth."
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] }, colors: { ayni: { 50: '#fdfbf7', 100: '#f4ede4', 500: '#0D6370', 600: '#0a4f5a', accent: '#ffd57a', dark: '#1a1a1a', text: '#4a4a4a' } } } } }
+    </script>
+    <style>
+        body { background-color: #fdfbf7; color: #4a4a4a; }
+        .glass-panel { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.8); }
+        .gradient-text { background: linear-gradient(135deg, #0D6370, #2a8a99); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        /* Mobile Menu */
+        #menu-checkbox { display: none; }
+        .menu-toggle { display: none; flex-direction: column; gap: 6px; cursor: pointer; }
+        .menu-toggle span { display: block; width: 28px; height: 2px; background-color: #1a1a1a; transition: 0.3s; }
+        @media (max-width: 768px) { .menu-toggle { display: flex; } .nav-links { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(253, 251, 247, 0.98); flex-direction: column; align-items: center; justify-content: center; gap: 2rem; transform: translateY(-100%); transition: transform 0.4s; z-index: 90; } #menu-checkbox:checked ~ .nav-links { transform: translateY(0); } }
+    </style>
+</head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RSR2XXB2DZ"></script>
 <script>
@@ -24,151 +44,31 @@
 
   gtag('config', 'G-RSR2XXB2DZ');
 </script>
-    <body>
-
-    <header class="navbar">
-        <a href="index.html" class="logo">Ayni <span>Social</span></a>
-        <input type="checkbox" id="menu-checkbox">
-        <label for="menu-checkbox" class="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </label>
-        <nav class="nav-links">
-            <a href="index.html" class="active">Home</a>
-            <a href="groups.html">Communities</a>
-            <a href="skills.html">Skills</a>
-            <a href="projects.html">Projects</a>
-            <a href="products.html">Marketplace</a>
-            <a href="about.html">About</a>
-            <a href="#waitlist" class="btn btn-secondary open-waitlist">Join Waitlist</a>
-        </nav>
+<body>
+    <header class="fixed w-full top-0 z-50 glass-panel border-b border-white/40">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-ayni-dark font-serif">Ayni <span class="text-ayni-500 font-sans font-medium text-xl">Social</span></a>
+            <input type="checkbox" id="menu-checkbox">
+            <label for="menu-checkbox" class="menu-toggle"><span></span><span></span><span></span></label>
+            <nav class="nav-links hidden md:flex gap-8 text-sm font-medium text-gray-600">
+                <a href="index.html" class="text-ayni-500 border-b-2 border-ayni-500 pb-1">Home</a>
+                <a href="groups.html" class="hover:text-ayni-500">Communities</a>
+                <a href="marketplace.html" class="hover:text-ayni-500">Marketplace</a>
+                <a href="skills.html" class="hover:text-ayni-500">Skills</a>
+                <a href="about.html" class="hover:text-ayni-500">About</a>
+            </nav>
+        </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-badge">🌱 Rooted in Reciprocity</div>
-        <h1 id="hero-title">Build Communities.<br>Share Skills. <span>Create Together.</span></h1>
-        <p class="hero-subtitle">
-            A social platform built around reciprocity, collaboration, and collective growth. Move beyond algorithms and followers to real-world impact.
-        </p>
-        <div class="hero-buttons">
-            <a href="groups.html" class="btn btn-primary">Create Community</a>
-            <a href="groups.html" class="btn btn-outline">Explore Groups</a>
-        </div>
-    </section>
-
-    <!-- Compact Explore Section (replaces large content areas) -->
-    <section class="compact-explore" style="padding: 60px 0;">
-        <h2 class="section-heading">Explore Ayni</h2>
-        <p class="section-subheading">Quick access to the main sections — tap a card to open the page from the menu.</p>
-
-        <div class="cards-grid" style="max-width:1000px; margin: 40px auto; gap: 24px;">
-            <a href="groups.html" class="interactive-card">
-                <h3>Communities</h3>
-                <p>Find and join local groups organising around shared interests and needs.</p>
-            </a>
-            <a href="skills.html" class="interactive-card">
-                <h3>Skills</h3>
-                <p>Offer or request skills and mentorship within your neighbourhood.</p>
-            </a>
-            <a href="projects.html" class="interactive-card">
-                <h3>Projects</h3>
-                <p>Collaborative ventures where members contribute time and expertise.</p>
-            </a>
-            <a href="products.html" class="interactive-card">
-                <h3>Marketplace</h3>
-                <p>Support local makers and discover neighbourhood products.</p>
-            </a>
-            <a href="about.html" class="interactive-card">
-                <h3>About</h3>
-                <p>Learn more about Ayni's values, principles and how to get involved.</p>
-            </a>
-            <a href="#waitlist" class="interactive-card open-waitlist">
-                <h3>Join Waitlist</h3>
-                <p>Sign up for early access and help shape the platform.</p>
-            </a>
-        </div>
-    </section>
-
-    <!-- Ayni Circle Teaser -->
-    <section class="ayni-circle-section" style="padding: 60px 5%; background: linear-gradient(135deg, #fdfbf7 0%, #fff 100%);">
-        <div style="max-width: 800px; margin: 0 auto; text-align: center; border: 2px dashed var(--border-color); padding: 40px; border-radius: var(--radius-xl);">
-            <span class="ritual-sub" style="color: var(--secondary); display: block; margin-bottom: 12px;">Friday Ritual · Melville</span>
-            <h2 style="margin-bottom: 16px; font-size: 2rem;">The Ayni Circle</h2>
-            <p class="hero-subtitle" style="font-size: 1.1rem; margin-bottom: 32px;">
-                "Eat first. Connect second." Join our standing Friday supper built on the principles of reciprocity, mutual aid, and shared abundance.
-            </p>
-            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-                <a href="circle.html" class="btn btn-primary">Learn How it Works</a>
-                <a href="https://wa.me/6587612979?text=Hi%20Ayni,%20tell%20me%20more%20about%20the%20Friday%20supper" class="btn btn-outline" style="margin-left: 0;">Join on WhatsApp</a>
+    <main class="pt-32 pb-20">
+        <section class="max-w-7xl mx-auto px-6 py-12 text-center">
+            <h1 class="text-5xl md:text-7xl font-serif text-ayni-dark mb-8 leading-tight">Build Communities.<br><span class="gradient-text">Create Together.</span></h1>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-10">A social platform built around reciprocity, collaboration, and collective growth.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="groups.html" class="bg-ayni-dark text-white px-8 py-4 rounded-full font-medium hover:bg-black transition-all">Explore Communities</a>
+                <a href="marketplace.html" class="bg-white border border-gray-200 px-8 py-4 rounded-full font-medium hover:border-ayni-500 transition-all">Visit Marketplace</a>
             </div>
-        </div>
-    </section>
-
-    <!-- Join Waitlist -->
-    <section id="waitlist" class="form-section">
-        <div class="glass-form-container">
-            <h2>Join the Reciprocity Movement</h2>
-            <p>Be the first to build on Ayni Social. Join our waitlist for early access to the platform.</p>
-            
-            <form action="https://formspree.io/f/mqeoppnr" method="POST" class="interactive-form">
-                <input type="text" name="_honey" style="display:none">
-                <input type="hidden" name="_next" value="https://ayni.sg/index.html?status=success">
-                
-                <div class="form-group">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" name="email" placeholder="Email Address" required>
-                </div>
-                <div class="form-group">
-                    <textarea name="interest" placeholder="What will you offer the community? (e.g., Coding, Gardening, Mentorship...)"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Join Waitlist</button>
-            </form>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Ayni Social. Built on the principles of reciprocity and mutual aid.</p>
-    </footer>
-
-    <!-- Social Links (below main content, above footer) -->
-    <section class="socials">
-        <div class="socials-inner">
-            <a href="https://www.youtube.com/@aynisg" class="social-link youtube" target="_blank" rel="noopener noreferrer" aria-label="Ayni on YouTube">
-                <i class="fab fa-youtube"></i>
-                <span>@aynisg</span>
-            </a>
-        </div>
-    </section>
-
-    <!-- Modal: Waitlist -->
-    <div class="modal-overlay" id="waitlist-modal" aria-hidden="true">
-        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-            <button class="modal-close" aria-label="Close">&times;</button>
-            <h2 id="modal-title">Join the Reciprocity Movement</h2>
-            <p>Sign up for early access and help shape the platform.</p>
-            <form action="https://formspree.io/f/mqeoppnr" method="POST" class="interactive-form modal-form">
-                <input type="text" name="_honey" style="display:none">
-                <input type="hidden" name="_next" value="https://ayni.sg/index.html?status=success">
-                <div class="form-group"><input type="text" name="name" placeholder="Your Name" required></div>
-                <div class="form-group"><input type="email" name="email" placeholder="Email Address" required></div>
-                <div class="form-group"><textarea name="interest" placeholder="What will you offer the community? (e.g., Coding, Gardening, Mentorship...)" ></textarea></div>
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Join Waitlist</button>
-            </form>
-        </div>
-    </div>
-
-    <script src="assets/script.js"></script>
-    <!-- Floating Social CTAs -->
-    <a href="https://wa.me/6587612979?text=Hi%20Ayni,%20I'd%20like%20to%20chat" class="social-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat with Ayni on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <a href="https://www.instagram.com/ayni_sg/" class="social-cta" target="_blank" rel="noopener noreferrer" aria-label="Ayni on Instagram"> 
-        <i class="fab fa-instagram"></i>
-    </a>
+        </section>
+    </main>
 </body>
 </html>

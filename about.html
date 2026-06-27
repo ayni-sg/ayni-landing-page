@@ -1,10 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Ayni Social</title>
-    <link rel="stylesheet" href="assets/styles.css">
+    <title>The Ayni Thesis | Ayni Social</title>
+    <meta name="description" content="Learn about the Ayni Social philosophy: Reciprocity, mutual aid, and the reimagined Kampung spirit for the modern digital neighborhood.">
+    
+    <!-- AI/Search Agent Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "Ayni Social",
+        "description": "A platform built around reciprocity, collaboration, and collective growth.",
+        "founder": "Ayni Community"
+      }
+    }
+    </script>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] }, colors: { ayni: { 50: '#fdfbf7', 100: '#f4ede4', 500: '#0D6370', 600: '#0a4f5a', accent: '#ffd57a', dark: '#1a1a1a', text: '#4a4a4a' } } } } }
+    </script>
+    <style>
+        body { background-color: #fdfbf7; color: #4a4a4a; }
+        .glass-panel { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.8); }
+        .gradient-text { background: linear-gradient(135deg, #0D6370, #2a8a99); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        #menu-checkbox { display: none; }
+        .menu-toggle { display: none; flex-direction: column; gap: 6px; cursor: pointer; }
+        .menu-toggle span { display: block; width: 28px; height: 2px; background-color: #1a1a1a; transition: 0.3s; }
+        @media (max-width: 768px) { .menu-toggle { display: flex; } .nav-links { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(253, 251, 247, 0.98); flex-direction: column; align-items: center; justify-content: center; gap: 2rem; transform: translateY(-100%); transition: transform 0.4s; z-index: 90; } #menu-checkbox:checked ~ .nav-links { transform: translateY(0); } }
+    </style>
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RSR2XXB2DZ"></script>
@@ -16,53 +44,50 @@
   gtag('config', 'G-RSR2XXB2DZ');
 </script>
 <body>
-    <header class="navbar">
-        <a href="index.html" class="logo">Ayni <span>Social</span></a>
-        <input type="checkbox" id="menu-checkbox">
-        <label for="menu-checkbox" class="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </label>
-        <nav class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="groups.html">Communities</a>
-            <a href="skills.html">Skills</a>
-            <a href="projects.html">Projects</a>
-            <a href="products.html">Marketplace</a>
-            <a href="about.html" class="active">About</a>
-        </nav>
+    <header class="fixed w-full top-0 z-50 glass-panel border-b border-white/40">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-ayni-dark font-serif">Ayni <span class="text-ayni-500 font-sans font-medium text-xl">Social</span></a>
+            <input type="checkbox" id="menu-checkbox">
+            <label for="menu-checkbox" class="menu-toggle"><span></span><span></span><span></span></label>
+            <nav class="nav-links hidden md:flex gap-8 text-sm font-medium text-gray-600">
+                <a href="index.html" class="hover:text-ayni-500">Home</a>
+                <a href="groups.html" class="hover:text-ayni-500">Communities</a>
+                <a href="marketplace.html" class="hover:text-ayni-500">Marketplace</a>
+                <a href="skills.html" class="hover:text-ayni-500">Skills</a>
+                <a href="about.html" class="text-ayni-500 border-b-2 border-ayni-500 pb-1">About</a>
+            </nav>
+        </div>
     </header>
 
-    <main class="form-page-container" style="max-width: 850px;">
-        <div class="glass-form-container" style="padding: 60px;">
-            <div style="text-align: center; margin-bottom: 48px;">
-                <h1 style="font-size: 3rem; margin-bottom: 16px;">The Ayni Thesis</h1>
-                <p style="font-size: 1.25rem; color: var(--text-secondary);">"Ayni" represents reciprocity—the concept of mutual aid, collective sharing, and thriving together locally.</p>
+    <main class="pt-32 pb-20 px-6 max-w-4xl mx-auto">
+        <section class="glass-panel p-10 md:p-16 rounded-3xl shadow-xl mb-16">
+            <h1 class="text-5xl font-serif text-ayni-dark mb-8 leading-tight">The Ayni <span class="gradient-text">Thesis</span></h1>
+            <p class="text-xl text-gray-600 leading-relaxed mb-6">
+                In a digital age defined by transactions, we are building a space defined by <strong>reciprocity</strong>. Ayni Social is an attempt to recover the "Kampung spirit"—the deep, local reliance we once had on our neighbors.
+            </p>
+            <p class="text-lg text-gray-500 italic">
+                "We don't need more connections; we need better, more resilient ones."
+            </p>
+        </section>
+
+        <section class="grid md:grid-cols-2 gap-8 mb-16">
+            <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
+                <div class="text-ayni-500 text-3xl mb-4">🤝</div>
+                <h3 class="text-2xl font-bold mb-4">Mutual Aid</h3>
+                <p class="text-gray-600 leading-relaxed">Community resilience isn't found in markets, but in mutual aid. We believe that when we share our skills, tools, and time, we reduce our dependency on impersonal global supply chains.</p>
             </div>
-            
-            <section style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.8;">
-                <p style="margin-bottom: 32px;">In a world dominated by attention-extractive feeds and fragmented community forums, finding trustworthy interest groups, reliable peer-educators, or supporting a home bakery down your block has become increasingly transactional.</p>
-                
-                <p style="margin-bottom: 32px;"><strong>Ayni Social</strong> is engineered to restore organic alignment. By establishing streamlined indexing for local initiatives, we give residents in Singapore the structural framework needed to find each other, execute collaborative education, and sustain economic resiliency independent of centralized big-tech platforms.</p>
+            <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
+                <div class="text-ayni-500 text-3xl mb-4">🌱</div>
+                <h3 class="text-2xl font-bold mb-4">The Kampung Spirit</h3>
+                <p class="text-gray-600 leading-relaxed">The kampung was more than a village; it was a promise. Ayni Social brings that intimacy to your screen, making it easier to discover the people living just a floor or a street away.</p>
+            </div>
+        </section>
 
-                <h2 style="color: var(--primary); margin-bottom: 24px; font-size: 1.8rem;">Our Principles</h2>
-                <ul style="list-style: none; margin-bottom: 40px;">
-                    <li style="margin-bottom: 16px;"><strong>✨ Contribution > Attention:</strong> We reward helping, teaching, and organizing instead of popularity.</li>
-                    <li style="margin-bottom: 16px;"><strong>👥 Communities > Audiences:</strong> The primary object is the community, not the individual.</li>
-                    <li style="margin-bottom: 16px;"><strong>🤝 Reciprocity > Consumption:</strong> Every interaction is an opportunity to offer and receive.</li>
-                    <li style="margin-bottom: 16px;"><strong>📍 Local First:</strong> Discover collaborators and projects in your neighborhood before the global noise.</li>
-                </ul>
-
-                <div style="text-align: center; margin-top: 60px;">
-                    <a href="index.html#waitlist" class="btn btn-primary">Join our movement</a>
-                </div>
-            </section>
-        </div>
+        <section class="text-center">
+            <h2 class="text-3xl font-serif text-ayni-dark mb-6">Join the movement</h2>
+            <p class="text-gray-600 mb-8 max-w-lg mx-auto">Whether you're offering tech support, sharing extra harvests, or building a community group, your contribution matters.</p>
+            <a href="groups.html" class="bg-ayni-dark text-white px-8 py-4 rounded-full font-medium hover:bg-black transition-all">Explore Communities</a>
+        </section>
     </main>
-
-    <footer>
-        <p>&copy; 2026 Ayni Social. Built on the principles of reciprocity and mutual aid.</p>
-    </footer>
 </body>
 </html>
