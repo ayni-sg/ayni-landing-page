@@ -71,6 +71,8 @@
         #menu-checkbox { display: none; }
         .menu-toggle { display: none; flex-direction: column; gap: 6px; cursor: pointer; z-index: 100; }
         .menu-toggle span { display: block; width: 28px; height: 2px; background-color: theme('colors.ayni.dark'); transition: 0.3s; }
+        .nav-links { display: flex; align-items: center; gap: 2rem; }
+        .nav-links a { transition: color 0.2s ease; }
         
         @media (max-width: 768px) {
             .menu-toggle { display: flex; }
@@ -172,13 +174,12 @@
                 <span></span><span></span><span></span>
             </label>
             
-            <nav class="nav-links flex gap-8 text-sm font-medium text-gray-600">
+            <nav class="nav-links text-sm font-medium text-gray-600">
                 <a href="index.html" class="hover:text-ayni-500 transition-colors">Home</a>
                 <a href="groups.html" class="hover:text-ayni-500 transition-colors">Communities</a>
                 <a href="skills.html" class="hover:text-ayni-500 transition-colors">Skills</a>
                 <a href="marketplace.html" class="text-ayni-500 font-semibold border-b-2 border-ayni-500 pb-1">Marketplace</a>
                 <a href="about.html" class="hover:text-ayni-500 transition-colors">About</a>
-                <a href="#list-item" class="md:hidden bg-ayni-500 text-white px-6 py-2 rounded-full">List an Item</a>
             </nav>
 
             <a href="#list-item" class="hidden md:inline-flex bg-ayni-500 hover:bg-ayni-600 text-white px-6 py-2.5 rounded-full text-sm font-medium transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">

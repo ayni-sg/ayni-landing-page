@@ -28,11 +28,12 @@
         body { background-color: #fdfbf7; color: #4a4a4a; }
         .glass-panel { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.8); }
         .gradient-text { background: linear-gradient(135deg, #0D6370, #2a8a99); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        /* Mobile Menu */
         #menu-checkbox { display: none; }
-        .menu-toggle { display: none; flex-direction: column; gap: 6px; cursor: pointer; }
+        .menu-toggle { display: none; flex-direction: column; gap: 6px; cursor: pointer; z-index: 100; }
         .menu-toggle span { display: block; width: 28px; height: 2px; background-color: #1a1a1a; transition: 0.3s; }
-        @media (max-width: 768px) { .menu-toggle { display: flex; } .nav-links { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(253, 251, 247, 0.98); flex-direction: column; align-items: center; justify-content: center; gap: 2rem; transform: translateY(-100%); transition: transform 0.4s; z-index: 90; } #menu-checkbox:checked ~ .nav-links { transform: translateY(0); } }
+        .nav-links { display: flex; align-items: center; gap: 2rem; }
+        .nav-links a { transition: color 0.2s ease; }
+        @media (max-width: 768px) { .menu-toggle { display: flex; } .nav-links { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(253, 251, 247, 0.98); backdrop-filter: blur(10px); flex-direction: column; align-items: center; justify-content: center; gap: 2rem; transform: translateY(-100%); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); z-index: 90; } #menu-checkbox:checked ~ .nav-links { transform: translateY(0); } #menu-checkbox:checked ~ .menu-toggle span:nth-child(1) { transform: translateY(8px) rotate(45deg); } #menu-checkbox:checked ~ .menu-toggle span:nth-child(2) { opacity: 0; } #menu-checkbox:checked ~ .menu-toggle span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); } }
     </style>
 </head>
 <!-- Google tag (gtag.js) -->
@@ -45,18 +46,19 @@
   gtag('config', 'G-RSR2XXB2DZ');
 </script>
 <body>
-    <header class="fixed w-full top-0 z-50 glass-panel border-b border-white/40">
+    <header class="fixed w-full top-0 z-50 glass-panel border-b border-white/40 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-ayni-dark font-serif">Ayni <span class="text-ayni-500 font-sans font-medium text-xl">Social</span></a>
+            <a href="index.html" class="text-2xl font-bold text-ayni-dark font-serif tracking-tight">Ayni <span class="text-ayni-500 font-sans font-medium text-xl">Social</span></a>
             <input type="checkbox" id="menu-checkbox">
             <label for="menu-checkbox" class="menu-toggle"><span></span><span></span><span></span></label>
-            <nav class="nav-links hidden md:flex gap-8 text-sm font-medium text-gray-600">
-                <a href="index.html" class="text-ayni-500 border-b-2 border-ayni-500 pb-1">Home</a>
-                <a href="groups.html" class="hover:text-ayni-500">Communities</a>
-                <a href="marketplace.html" class="hover:text-ayni-500">Marketplace</a>
-                <a href="skills.html" class="hover:text-ayni-500">Skills</a>
-                <a href="about.html" class="hover:text-ayni-500">About</a>
+            <nav class="nav-links text-sm font-medium text-gray-600">
+                <a href="index.html" class="text-ayni-500 font-semibold border-b-2 border-ayni-500 pb-1">Home</a>
+                <a href="groups.html" class="hover:text-ayni-500 transition-colors">Communities</a>
+                <a href="skills.html" class="hover:text-ayni-500 transition-colors">Skills</a>
+                <a href="marketplace.html" class="hover:text-ayni-500 transition-colors">Marketplace</a>
+                <a href="about.html" class="hover:text-ayni-500 transition-colors">About</a>
             </nav>
+            <a href="marketplace.html#list-item" class="hidden md:inline-flex bg-ayni-500 hover:bg-ayni-600 text-white px-6 py-2.5 rounded-full text-sm font-medium transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">List an Item</a>
         </div>
     </header>
 
