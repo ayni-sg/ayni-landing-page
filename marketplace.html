@@ -413,6 +413,19 @@
                             class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-ayni-500 focus:border-ayni-500 transition-all outline-none bg-white/50 backdrop-blur-sm">
                     </div>
 
+                    <div id="contact-fields" class="grid md:grid-cols-2 gap-6 hidden">
+                        <div class="space-y-2">
+                            <label for="email" class="block text-sm font-semibold text-gray-700">Email (optional)</label>
+                            <input type="email" id="email" name="email" placeholder="you@example.com"
+                                class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-ayni-500 focus:border-ayni-500 transition-all outline-none bg-white/50 backdrop-blur-sm">
+                        </div>
+                        <div class="space-y-2">
+                            <label for="phone" class="block text-sm font-semibold text-gray-700">Phone (optional)</label>
+                            <input type="tel" id="phone" name="phone" placeholder="e.g., +65 9123 4567"
+                                class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-ayni-500 focus:border-ayni-500 transition-all outline-none bg-white/50 backdrop-blur-sm">
+                        </div>
+                    </div>
+
                     <div class="space-y-2">
                         <label for="description" class="block text-sm font-semibold text-gray-700">Details & Story</label>
                         <textarea id="description" name="description" rows="4" placeholder="Describe the item, ingredients, and a bit about why you make it. For resources, list condition and rules of use." required
@@ -461,6 +474,8 @@
                 ['item_name', 'item_name'],
                 ['type', 'type'],
                 ['price', 'price'],
+                ['email', 'email'],
+                ['phone', 'phone'],
                 ['description', 'description']
             ];
 
@@ -485,6 +500,28 @@
 
             const form = document.getElementById('marketplace-form');
             const statusEl = document.getElementById('form-status');
+            const descriptionField = document.getElementById('description');
+            const contactFields = document.getElementById('contact-fields');
+
+            const revealContactFields = () => {
+                if (contactFields) {
+                    contactFields.classList.remove('hidden');
+                }
+            };
+
+            if (descriptionField) {
+                if (descriptionField.value.trim()) {
+                    revealContactFields();
+                }
+                descriptionField.addEventListener('input', (event) => {
+                    if (event.target.value.trim()) {
+                        revealContactFields();
+                    }
+                });
+                descriptionField.addEventListener('focus', () => {
+                    revealContactFields();
+                });
+            }
 
             if (form && statusEl) {
                 form.addEventListener('submit', async (event) => {
