@@ -453,5 +453,36 @@
         </div>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const fields = [
+                ['item_name', 'item_name'],
+                ['type', 'type'],
+                ['price', 'price'],
+                ['description', 'description']
+            ];
+
+            fields.forEach(([paramName, fieldId]) => {
+                const value = params.get(paramName);
+                if (value) {
+                    const field = document.getElementById(fieldId);
+                    if (field) {
+                        field.value = decodeURIComponent(value);
+                    }
+                }
+            });
+
+            if (window.location.hash === '#list-item' || params.toString()) {
+                setTimeout(() => {
+                    const section = document.getElementById('list-item');
+                    if (section) {
+                        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }, 120);
+            }
+        });
+    </script>
+
 </body>
 </html>
