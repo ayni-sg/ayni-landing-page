@@ -110,6 +110,44 @@
         .product-card:hover .product-image-wrapper img {
             transform: scale(1.05);
         }
+        .price-block {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+        }
+        .price-main {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+        }
+        .price-current {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: theme('colors.ayni.dark');
+        }
+        .price-original {
+            font-size: 0.95rem;
+            color: #9ca3af;
+            text-decoration: line-through;
+        }
+        .discount-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            width: fit-content;
+            padding: 0.35rem 0.65rem;
+            border-radius: 9999px;
+            background: linear-gradient(135deg, rgba(255, 213, 122, 0.28), rgba(255, 213, 122, 0.18));
+            color: #b56d00;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+        }
+        .price-note {
+            font-size: 0.75rem;
+            color: #6b7280;
+        }
     </style>
 </head>
 <!-- Google tag (gtag.js) -->
@@ -228,10 +266,14 @@
                         </div>
                         <h3 class="text-lg font-bold text-ayni-dark mb-2">Artisanal Deep Cocoa Cake</h3>
                         <p class="text-sm text-gray-600 mb-6 flex-grow">Rich, decadent artisanal deep cocoa cake topped with gold leaf and roasted hazelnuts. Perfect for neighborhood celebrations.</p>
-                        <div class="flex items-center justify-between mt-auto">
-                            <div class="flex flex-col">
-                                <span class="text-xl font-bold text-ayni-dark">$35.00</span>
-                                <span class="text-xs text-gray-400">/ whole cake</span>
+                        <div class="flex items-center justify-between mt-auto gap-4">
+                            <div class="price-block">
+                                <div class="price-main">
+                                    <span class="price-current">$28.00</span>
+                                    <span class="price-original">$35.00</span>
+                                </div>
+                                <div class="discount-badge"><i class="fa-solid fa-tag"></i> Save 20%</div>
+                                <span class="price-note">/ whole cake</span>
                             </div>
                             <div class="flex items-center gap-2">
                                 <a href="https://www.instagram.com/guiltfreebakes.sg/" target="_blank" rel="noopener noreferrer" class="bg-pink-500 hover:bg-pink-600 text-white w-10 h-10 rounded-full flex items-center justify-center transition-transform hover:scale-110 shadow-md" aria-label="View Instagram">
@@ -257,10 +299,14 @@
                         </div>
                         <h3 class="text-lg font-bold text-ayni-dark mb-2">Minion Cupcakes</h3>
                         <p class="text-sm text-gray-600 mb-6 flex-grow">Fun, handcrafted Minion-themed cupcakes! Made with love, featuring adorable fondant details. Kids absolutely love them.</p>
-                        <div class="flex items-center justify-between mt-auto">
-                            <div class="flex flex-col">
-                                <span class="text-xl font-bold text-ayni-dark">$18.00</span>
-                                <span class="text-xs text-gray-400">/ box of 4</span>
+                        <div class="flex items-center justify-between mt-auto gap-4">
+                            <div class="price-block">
+                                <div class="price-main">
+                                    <span class="price-current">$18.00</span>
+                                    <span class="price-original">$24.00</span>
+                                </div>
+                                <div class="discount-badge"><i class="fa-solid fa-tag"></i> Save 25%</div>
+                                <span class="price-note">/ box of 4</span>
                             </div>
                             <div class="flex items-center gap-2">
                                 <a href="https://www.instagram.com/guiltfreebakes.sg/" target="_blank" rel="noopener noreferrer" class="bg-pink-500 hover:bg-pink-600 text-white w-10 h-10 rounded-full flex items-center justify-center transition-transform hover:scale-110 shadow-md" aria-label="View Instagram">
@@ -286,10 +332,12 @@
                         </div>
                         <h3 class="text-lg font-bold text-ayni-dark mb-2">Yogurt Bites</h3>
                         <p class="text-sm text-gray-600 mb-6 flex-grow">Coffee, berries, dark chocolate, and Greek yogurt goodness! High in protein, perfectly frozen, with no refined sugar.</p>
-                        <div class="flex items-center justify-between mt-auto">
-                            <div class="flex flex-col">
-                                <span class="text-xl font-bold text-ayni-dark">$12.00</span>
-                                <span class="text-xs text-gray-400">/ pack</span>
+                        <div class="flex items-center justify-between mt-auto gap-4">
+                            <div class="price-block">
+                                <div class="price-main">
+                                    <span class="price-current">$12.00</span>
+                                </div>
+                                <span class="price-note">/ pack of 15</span>
                             </div>
                             <div class="flex items-center gap-2">
                                 <a href="https://www.instagram.com/guiltfreebakes.sg/" target="_blank" rel="noopener noreferrer" class="bg-pink-500 hover:bg-pink-600 text-white w-10 h-10 rounded-full flex items-center justify-center transition-transform hover:scale-110 shadow-md" aria-label="View Instagram">
