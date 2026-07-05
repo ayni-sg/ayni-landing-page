@@ -388,7 +388,7 @@
                 </div>
                 
                 <!-- Formspree Endpoint strictly maintained as requested -->
-                <form action="https://formspree.io/f/mqeoppnr" method="POST" class="space-y-6">
+                <form id="marketplace-form" action="https://formspree.io/f/mqeoppnr" method="POST" class="space-y-6">
                     <div class="grid md:grid-cols-2 gap-6">
                         <div class="space-y-2">
                             <label for="item_name" class="block text-sm font-semibold text-gray-700">Resource / Product Name</label>
@@ -422,6 +422,7 @@
                     <button type="submit" class="w-full bg-ayni-500 hover:bg-ayni-600 text-white font-semibold py-4 rounded-xl transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
                         Submit Listing to Marketplace
                     </button>
+                    <div id="form-status" class="text-center text-sm mt-4 hidden" aria-live="polite"></div>
                     <p class="text-xs text-center text-gray-400 mt-4">
                         All listings are reviewed to ensure they align with Ayni's local reciprocity guidelines.
                     </p>
@@ -480,6 +481,48 @@
                         section.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
                 }, 120);
+            }
+
+            const form = document.getElementById('marketplace-form');
+            const statusEl = document.getElementById('form-status');
+
+            if (form && statusEl) {
+                form.addEventListener('submit', async (event) => {
+                    event.preventDefault();
+                    if (!form.checkValidity()) {
+                        form.reportValidity();
+                        return;
+                    }
+
+                    statusEl.textContent = 'Sending your listing...';
+                    statusEl.className = 'text-center text-sm mt-4 text-ayni-dark';
+                    statusEl.classList.remove('hidden');
+
+                    const formData = new FormData(form);
+
+                    try {
+                        const response = await fetch(form.action, {
+                            method: form.method,
+                            body: formData,
+                            headers: {
+                                'Accept': 'application/json'
+                            }
+                        });
+
+                        if (response.ok) {
+                            statusEl.textContent = 'Thanks! Your listing was sent successfully. We will review it shortly.';
+                            statusEl.className = 'text-center text-sm mt-4 text-green-600';
+                            form.reset();
+                        } else {
+                            const data = await response.json().catch(() => ({}));
+                            statusEl.textContent = data.error || 'Sorry, something went wrong. Please try again in a moment.';
+                            statusEl.className = 'text-center text-sm mt-4 text-red-600';
+                        }
+                    } catch (error) {
+                        statusEl.textContent = 'Network error. Please check your connection and try again.';
+                        statusEl.className = 'text-center text-sm mt-4 text-red-600';
+                    }
+                });
             }
         });
     </script>
