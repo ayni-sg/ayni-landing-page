@@ -348,22 +348,25 @@
             </p>
           </div>
 
-          <form class="waitlist-form reveal fade-right" action="https://formspree.io/f/mqeoppnr" method="POST" novalidate>
+          <form id="waitlist-form" class="waitlist-form reveal fade-right" action="https://formspree.io/f/mqeoppnr" method="POST" novalidate>
             <div class="form-row">
               <label for="name">Name</label>
-              <input id="name" name="name" type="text" required />
+              <input id="name" name="name" type="text" required data-fs-field />
+              <span class="field-error" data-fs-error="name"></span>
             </div>
             <div class="form-row">
               <label for="email">Email</label>
-              <input id="email" name="email" type="email" required />
+              <input id="email" name="email" type="email" required data-fs-field />
+              <span class="field-error" data-fs-error="email"></span>
             </div>
             <div class="form-row">
               <label for="country">Country</label>
-              <input id="country" name="country" type="text" required />
+              <input id="country" name="country" type="text" required data-fs-field />
+              <span class="field-error" data-fs-error="country"></span>
             </div>
             <div class="form-row">
               <label for="education">Current Education Level</label>
-              <select id="education" name="education" required>
+              <select id="education" name="education" required data-fs-field>
                 <option value="">Select one</option>
                 <option>High School</option>
                 <option>Junior College</option>
@@ -372,13 +375,15 @@
                 <option>Parent</option>
                 <option>Teacher</option>
               </select>
+              <span class="field-error" data-fs-error="education"></span>
             </div>
             <div class="form-row">
               <label for="message">Message</label>
-              <textarea id="message" name="message" rows="4"></textarea>
+              <textarea id="message" name="message" rows="4" data-fs-field></textarea>
+              <span class="field-error" data-fs-error="message"></span>
             </div>
             <button class="btn btn-primary" type="submit">Join Waitlist</button>
-            <p class="form-message" aria-live="polite"></p>
+            <p class="form-message" aria-live="polite" data-fs-success></p>
           </form>
         </div>
       </section>

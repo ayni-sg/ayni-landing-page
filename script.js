@@ -1,7 +1,7 @@
 const header = document.querySelector('.site-header');
 const nav = document.querySelector('.site-nav');
 const toggle = document.querySelector('.menu-toggle');
-const form = document.querySelector('.waitlist-form');
+const form = document.getElementById('waitlist-form');
 const formMessage = document.querySelector('.form-message');
 const year = document.getElementById('year');
 const mentorGrid = document.getElementById('mentor-grid');
@@ -120,30 +120,40 @@ if (toggle && nav) {
 }
 
 if (form) {
-  form.addEventListener('submit', (event) => {
+  form.addEventListener('submit', async (event) => {
     event.preventDefault();
 
     const name = form.querySelector('#name');
     const email = form.querySelector('#email');
     const country = form.querySelector('#country');
     const education = form.querySelector('#education');
+    const submitButton = form.querySelector('button[type="submit"]');
+    const errorFields = form.querySelectorAll('.field-error');
 
     const errors = [];
 
+    errorFields.forEach((field) => {
+      field.textContent = '';
+    });
+
     if (!name?.value.trim()) {
       errors.push('Please share your name.');
+      form.querySelector('[data-fs-error="name"]').textContent = 'Please share your name.';
     }
 
     if (!email?.value.trim() || !email.value.includes('@')) {
       errors.push('Please enter a valid email address.');
+      form.querySelector('[data-fs-error="email"]').textContent = 'Please enter a valid email address.';
     }
 
     if (!country?.value.trim()) {
       errors.push('Please tell us your country.');
+      form.querySelector('[data-fs-error="country"]').textContent = 'Please tell us your country.';
     }
 
     if (!education?.value) {
       errors.push('Please select your education level.');
+      form.querySelector('[data-fs-error="education"]').textContent = 'Please select your education level.';
     }
 
     if (errors.length) {
@@ -152,8 +162,29 @@ if (form) {
       return;
     }
 
-    formMessage.textContent = 'Thank you. Your waitlist request has been received.';
-    formMessage.style.color = '#06b6d4';
-    form.reset();
+    formMessage.textContent = 'Sending your request…';
+    formMessage.style.color = '#94a3b8';
+    submitButton.disabled = true;
+
+    try {
+      const response = await fetch(form.getAttribute('action'), {
+        method: (form.getAttribute('method') || 'POST').toUpperCase(),
+        headers: { Accept: 'application/json' },
+        body: new FormData(form)
+      });
+
+      if (response.ok) {
+        form.reset();
+        formMessage.textContent = 'Thank you. Your waitlist request has been received.';
+        formMessage.style.color = '#06b6d4';
+      } else {
+        throw new Error('Unable to send request right now. Please try again later.');
+      }
+    } catch (error) {
+      formMessage.textContent = error.message || 'Unable to send request right now. Please try again later.';
+      formMessage.style.color = '#f59e0b';
+    } finally {
+      submitButton.disabled = false;
+    }
   });
 }
