@@ -26,6 +26,14 @@ const observer = new IntersectionObserver(
 revealItems.forEach((item) => observer.observe(item));
 
 const mentors = [
+    {
+    name: 'Dr. Manan Shah',
+    title: 'Renewable Energy • Sustainability • Academic Leadership',
+    image: 'assets/manan.jpeg',
+    bio: 'Recognized among the World’s Top 2% Scientists by Stanford University and Elsevier, Dr. Manan Shah specializes in geothermal energy, renewable technologies, and sustainable engineering.',
+    expertise: ['Renewable Energy', 'Sustainability', 'Geothermal Engineering', 'Scientific Research', 'Academic Mentorship'],
+    linkedin: ''
+  },
   {
     name: 'Nirali Desai',
     title: 'AI-Driven Bioinformatics & Computational Biology',
@@ -48,14 +56,6 @@ const mentors = [
     image: 'public/images/mentors/helly-placeholder.png',
     bio: 'Helly has a strong foundation in molecular biology, RNA research, and laboratory sciences, guiding students through experimental design and scientific communication with confidence.',
     expertise: ['Molecular Biology', 'RNA Biology', 'Laboratory Research', 'Experimental Design', 'Scientific Writing'],
-    linkedin: ''
-  },
-  {
-    name: 'Dr. Manan Shah',
-    title: 'Renewable Energy • Sustainability • Academic Leadership',
-    image: 'assets/manan.jpeg',
-    bio: 'Recognized among the World’s Top 2% Scientists by Stanford University and Elsevier, Dr. Manan Shah specializes in geothermal energy, renewable technologies, and sustainable engineering.',
-    expertise: ['Renewable Energy', 'Sustainability', 'Geothermal Engineering', 'Scientific Research', 'Academic Mentorship'],
     linkedin: ''
   }
 ];
