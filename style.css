@@ -59,6 +59,11 @@ a { color: inherit; text-decoration: none; }
 .section { padding: 7rem 0; position: relative; }
 .alt { background: rgba(255, 255, 255, 0.03); }
 
+@media (max-width: 760px) {
+  .container { width: min(100%, calc(100% - 1.25rem)); }
+  .section { padding: 5rem 0; }
+}
+
 .site-header {
   position: sticky;
   top: 0;
@@ -173,6 +178,12 @@ h1, h2, h3 {
 h1 { font-size: clamp(2.5rem, 4vw, 4.3rem); max-width: 10ch; }
 h2 { font-size: clamp(2rem, 3.3vw, 2.8rem); max-width: 10ch; }
 h3 { font-size: 1.2rem; }
+
+@media (max-width: 760px) {
+  h1 { font-size: clamp(2.2rem, 8vw, 3rem); max-width: 100%; }
+  h2 { font-size: clamp(1.6rem, 6vw, 2.2rem); max-width: 100%; }
+  h3 { font-size: 1.08rem; }
+}
 
 .lead,
 .section-heading p,
@@ -503,22 +514,23 @@ textarea:focus { outline: 2px solid rgba(7, 182, 212, 0.45); border-color: var(-
   .waitlist-grid,
   .challenge-grid,
   .pillars-grid,
-  .mentors-grid,
   .programmes-grid,
   .feature-grid,
   .footer-grid { grid-template-columns: 1fr; }
   .feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .mentor-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 760px) {
+  .site-header { padding: 0.8rem 0; }
   .site-nav {
     position: fixed;
-    inset: 4.3rem 1rem auto 1rem;
+    inset: 4.3rem 0.75rem auto 0.75rem;
     display: grid;
-    gap: 1rem;
+    gap: 0.9rem;
     padding: 1rem;
     border-radius: 20px;
-    background: rgba(8, 17, 31, 0.95);
+    background: rgba(8, 17, 31, 0.97);
     border: 1px solid var(--border);
     box-shadow: var(--shadow);
     transform: translateY(-120%);
@@ -526,7 +538,67 @@ textarea:focus { outline: 2px solid rgba(7, 182, 212, 0.45); border-color: var(-
     z-index: 900;
   }
   .site-nav.open { transform: translateY(0); }
+  .site-nav a {
+    padding: 0.75rem 0.2rem;
+    font-size: 1rem;
+  }
   .menu-toggle { display: block; }
+  .hero-grid { gap: 1.5rem; }
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-actions .btn,
+  .hero-actions a,
+  .btn,
+  .nav-cta {
+    width: 100%;
+    justify-content: center;
+  }
+  .hero-highlights {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  .hero-highlights li {
+    text-align: center;
+    padding: 0.8rem 1rem;
+  }
+  .floating-pill { display: none; }
+  .visual-card { padding: 1rem; }
+  .card,
+  .quote-card,
+  .waitlist-form,
+  .mentor-card {
+    padding: 1.25rem;
+  }
   .feature-grid { grid-template-columns: 1fr; }
+  .mentor-grid { grid-template-columns: 1fr; }
+  .mentor-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .mentor-portrait {
+    width: 6.5rem;
+    height: 6.5rem;
+  }
+  .timeline-step {
+    padding: 0.95rem 1rem;
+    border-radius: 18px;
+  }
+  .waitlist-grid { gap: 1.5rem; }
+  .form-row { margin-bottom: 0.9rem; }
   .footer-bottom { flex-direction: column; }
+}
+
+@media (max-width: 480px) {
+  .section { padding: 4.25rem 0; }
+  .hero-actions { gap: 0.8rem; }
+  .btn,
+  .nav-cta {
+    padding: 0.95rem 1rem;
+    font-size: 0.96rem;
+  }
+  .site-nav { inset: 4rem 0.6rem auto 0.6rem; }
+  .mentor-tags { gap: 0.45rem; }
+  .mentor-tag { padding: 0.4rem 0.6rem; }
 }
